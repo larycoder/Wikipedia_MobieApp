@@ -1,5 +1,6 @@
 package com.test.demowiki;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,11 +17,15 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+
+import com.test.demowiki.ui.login.LoginActivity;
+
 import com.google.android.material.tabs.TabLayout;
 import com.test.demowiki.ui.My_lists.MyListsFragment;
 import com.test.demowiki.ui.explore.ExploreFragment;
 import com.test.demowiki.ui.history.HistoryFragment;
 import com.test.demowiki.ui.nearby.NearbyFragment;
+
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -80,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickLogIn(View view) {
+        Intent startLogIn = new Intent(this, LoginActivity.class);
+        startActivity(startLogIn);
     }
 }
 
