@@ -22,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.test.demowiki.R;
 import com.test.demowiki.ui.login.LoginViewModel;
 import com.test.demowiki.ui.login.LoginViewModelFactory;
@@ -38,7 +39,8 @@ public class LoginActivity extends AppCompatActivity {
                 .get(LoginViewModel.class);
 
         final EditText usernameEditText = findViewById(R.id.username);
-        final EditText passwordEditText = findViewById(R.id.password);
+//        final EditText passwordEditText = findViewById(R.id.password);
+        final TextInputEditText passwordEditText = findViewById(R.id.etPassword);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
@@ -127,5 +129,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClickJoin(View view) {
     }
 }
