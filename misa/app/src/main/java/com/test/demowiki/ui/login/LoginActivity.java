@@ -1,5 +1,6 @@
 package com.test.demowiki.ui.login;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 
 import androidx.lifecycle.Observer;
@@ -26,6 +27,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.test.demowiki.R;
 import com.test.demowiki.ui.login.LoginViewModel;
 import com.test.demowiki.ui.login.LoginViewModelFactory;
+
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -111,12 +114,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
         loginButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+                loginButton.setText("LOGGING YOU IN ...");
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+//                loginViewModel.login(usernameEditText.getText().toString(),
+//                        passwordEditText.getText().toString());
             }
         });
     }
@@ -133,4 +139,5 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onClickJoin(View view) {
     }
+
 }
