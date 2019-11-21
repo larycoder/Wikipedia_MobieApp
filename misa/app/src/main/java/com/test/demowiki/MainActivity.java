@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-
-
+    public void onClickLogIn(View view) {
+    }
 }
 
