@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="@string/hide_card"/>
-    <item android:title="@string/hide_this_type_card"/>
-    <item android:title="@string/customize"/>
-    <item android:title="@string/cancel"/>
+    <item android:id="@+id/hide_article"
+        android:title="@string/hide_card"/>
+    <item android:id="@+id/hide_article_type"
+        android:title="@string/hide_this_type_card"/>
+    <item android:id="@+id/title"
+        android:title="@string/customize"/>
+    <item android:id="@+id/cancel_article"
+        android:title="@string/cancel"/>
 </menu>

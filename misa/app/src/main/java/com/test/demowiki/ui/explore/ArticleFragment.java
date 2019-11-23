@@ -1,11 +1,14 @@
 package com.test.demowiki.ui.explore;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -29,4 +32,12 @@ public class ArticleFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_article, container, false);
     }
 
+//    public class Menu extends Activity {
+//        @Override
+//
+//        public boolean onCreateOptionsMenu(Menu menu) {
+//            MenuInflater inflater = getMenuInflater();
+//            return inflater.inflate(R.menu.article_menu,menu);
+//        }
+//    }
 }

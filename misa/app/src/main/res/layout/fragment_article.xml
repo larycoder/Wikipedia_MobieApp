@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -21,21 +21,27 @@
                 android:layout_height="wrap_content"
                 android:text="@string/article_type"
                 android:textColor="@color/colorTextBlack"
-                android:textStyle="bold"
-                android:textSize="12sp"/>
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorTextGrey"
                 android:text="@string/article_source"
-                android:textSize="12sp"/>
+                android:textColor="@color/colorTextGrey"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
+        <Button
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/article_option"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:drawableLeft="@drawable/ic_article_option"
+            style="?android:attr/borderlessButtonStyle"/>
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="350dp"
@@ -87,6 +93,4 @@
             android:textSize="5sp" />
 
     </LinearLayout>
-
-
 </LinearLayout>
