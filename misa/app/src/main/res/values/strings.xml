@@ -24,6 +24,17 @@
     <string name="login_failed">"Login failed"</string>
     <string name="prompt_email">Username</string>
 
+    <string name="search">Search Wikipedia</string>
+    <string name="article_type">Type</string>
+    <string name="article_source">Source</string>
+    <string name="article_title">Title</string>
+    <string name="article_summary">Summary</string>
+    <string name="article_content">Content</string>
+    <string name="save_button">Save for later</string>
+    <string name="hide_card">Hide this article</string>
+    <string name="hide_this_type_card">Hide all article of this type</string>
+    <string name="customize">Customize Explore feed</string>
+    <string name="cancel">Cancel</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
