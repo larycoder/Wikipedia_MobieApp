@@ -25,11 +25,11 @@
     <string name="prompt_email">Username</string>
 
     <string name="search">Search Wikipedia</string>
-    <string name="article_type">Type</string>
-    <string name="article_source">Source</string>
-    <string name="article_title">Title</string>
-    <string name="article_summary">Summary</string>
-    <string name="article_content">Content</string>
+    <string name="article_type">Feature article</string>
+    <string name="article_source">From English Wikipedia</string>
+    <string name="article_title">Spinophorosaurus</string>
+    <string name="article_summary">Middle Jurassic senus of Sauropod dinosaur</string>
+    <string name="article_content">Spinophorosaurus is a genus of sauropod dinosaur that lived in what is now Niger during the Middle Jurassic period. The first two specimens were excavated in the 2000s by German and Spanish teams under difficult conditions.</string>
     <string name="save_button">Save for later</string>
     <string name="hide_card">Hide this article</string>
     <string name="hide_this_type_card">Hide all article of this type</string>

@@ -18,7 +18,7 @@ public class TestFragmentActivity extends AppCompatActivity implements PopupMenu
         Button testBtn = (Button) findViewById(R.id.article_option);
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-           ; public void onClick(View view) {
+            public void onClick(View view) {
                 PopupMenu popup = new PopupMenu(TestFragmentActivity.this, view);
                 popup.setOnMenuItemClickListener(TestFragmentActivity.this);
                 popup.inflate(R.menu.article_menu);
