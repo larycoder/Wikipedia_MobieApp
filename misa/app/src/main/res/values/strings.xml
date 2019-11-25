@@ -39,7 +39,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
 
+<<<<<<< HEAD
     <!-- about content -->
     <string name="Contributor">Contributor\n</string>
 
@@ -61,4 +63,33 @@
     </string>
 
 
+=======
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Setting Wikipedia Preferences -->
+    <string name="ReadingListSync">Reading list syncing</string>
+    <string name="ReadingListSyncPreference">Sync reading lists across different devices by saving them to your Wikipedia account</string>
+
+    <string name="ShowImage">Show images</string>
+    <string name="ShowImagePreference">Enable or disable loading of images in pages. Uncheck this setting if your Internet connection is slow, or if your data plan is limited.</string>
+
+    <string name="PreferOfflineContent">Prefer offline content</string>
+    <string name="PreferOfflineContentPreference">Save data usage by loading articles that are available offline rather than always loading the latest version of an article</string>
+
+    <string name="SendCrashReport">Send crash reports</string>
+    <string name="SendCrashReportPreference">Allow the app to send crash reports to us</string>
+>>>>>>> cedc131e21ef282da1fd0d6a8f5061aab4b7f82c
 </resources>
