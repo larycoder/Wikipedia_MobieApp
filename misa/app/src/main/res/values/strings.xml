@@ -41,7 +41,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings">Settings</string>
 
-<<<<<<< HEAD
     <!-- about content -->
     <string name="Contributor">Contributor\n</string>
 
@@ -62,8 +61,6 @@
         "Source code available on Gerrit and GitHub under the Apache 2.0 License. Unless otherwise specified, content is available under a Creative Commons Attribution-ShareAlike License."
     </string>
 
-
-=======
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -91,5 +88,4 @@
 
     <string name="SendCrashReport">Send crash reports</string>
     <string name="SendCrashReportPreference">Allow the app to send crash reports to us</string>
->>>>>>> cedc131e21ef282da1fd0d6a8f5061aab4b7f82c
 </resources>
