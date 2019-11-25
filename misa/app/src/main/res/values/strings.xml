@@ -13,6 +13,7 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="menu_about">About</string>
 
     <string name="title_activity_login">Log in to Wikipedia</string>
     <string name="prompt_password">Password</string>
@@ -38,5 +39,26 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- about content -->
+    <string name="Contributor">Contributor\n</string>
+
+    <string name="ContributorContent">
+        "Le Nhu Chu Hiep, Pham Thi Ngoc Mai, Doan Lien Huong, Vu Khanh Huyen, Pham Phan Bach."
+    </string>
+
+
+    <string name="TranslatorContent">
+        "This app was translated by the volunteer translators at translatewiki.net."
+    </string>
+
+    <string name="LibrariesContent">
+        "ButterKnife (license), ChromeLikeTabSwitcher (license), Commons Lang (license), Fresco (license), HockeySDK-Android (license), jsoup (license), Mapbox Android SDK (license), OkHttp (license), Otto (license), PageIndicatorView (license), Retrofit (license), RtlViewPager (license), TapTargetView (license)"
+    </string>
+
+    <string name="LicenseContent">
+        "Source code available on Gerrit and GitHub under the Apache 2.0 License. Unless otherwise specified, content is available under a Creative Commons Attribution-ShareAlike License."
+    </string>
+
 
 </resources>

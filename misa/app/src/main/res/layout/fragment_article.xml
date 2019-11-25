@@ -56,13 +56,13 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:orientation="vertical">
-
+<!--
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:src="@drawable/dinasaur" />
-
+-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
