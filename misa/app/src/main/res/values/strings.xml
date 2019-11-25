@@ -55,4 +55,16 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
+    <!-- Setting Wikipedia Preferences -->
+    <string name="ReadingListSync">Reading list syncing</string>
+    <string name="ReadingListSyncPreference">Sync reading lists across different devices by saving them to your Wikipedia account</string>
+
+    <string name="ShowImage">Show images</string>
+    <string name="ShowImagePreference">Enable or disable loading of images in pages. Uncheck this setting if your Internet connection is slow, or if your data plan is limited.</string>
+
+    <string name="PreferOfflineContent">Prefer offline content</string>
+    <string name="PreferOfflineContentPreference">Save data usage by loading articles that are available offline rather than always loading the latest version of an article</string>
+
+    <string name="SendCrashReport">Send crash reports</string>
+    <string name="SendCrashReportPreference">Allow the app to send crash reports to us</string>
 </resources>
