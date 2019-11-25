@@ -11,8 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.test.demowiki.MainActivity;
-import com.test.demowiki.R;
-import com.test.demowiki.ui.setting.SettingActivity;
 
 public class ToolsFragment extends Fragment {
     @Override
