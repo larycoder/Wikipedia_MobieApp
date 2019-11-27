@@ -1,18 +1,24 @@
-package com.test.demowiki.ui.tools;
+package com.test.demowiki.ui.setting;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.test.demowiki.MainActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class ToolsFragment extends Fragment {
+import com.test.demowiki.MainActivity;
+import com.test.demowiki.R;
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class SettingFragment extends Fragment {
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
