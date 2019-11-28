@@ -15,7 +15,7 @@ public class TestFragmentActivity extends AppCompatActivity implements PopupMenu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_article);
-        Button testBtn = (Button) findViewById(R.id.article_option);
+        Button testBtn = findViewById(R.id.article_option);
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
