@@ -36,6 +36,29 @@
     <string name="customize">Customize Explore feed</string>
     <string name="cancel">Cancel</string>
 
+
+
+    <!--Registration strings-->
+    <string name="title_activity_registration">Create an account</string>
+    <string name="donething1">Sync your reading lists</string>
+    <string name="donething2">Keep track of your contributions</string>
+    <string name="donething3">Save your preferences</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">LOG IN</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_repeat_password">Repeat password</string>
+    <string name="hint_email">Email (Optional)</string>
+    <string name="email_recommend">Recommended since email is needed for account recovery.</string>
+    <string name="next">NEXT</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="invalid_name1">The user name \"</string>
+    <string name="invalid_name2">\" is not available. Please choose a different name.</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="invalid_reg_password">The password is invalid</string>
+    <string name="invalid_repeat_password">Passwords don\'t match</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings">Settings</string>

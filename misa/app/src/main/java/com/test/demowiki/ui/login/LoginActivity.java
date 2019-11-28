@@ -6,6 +6,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -27,7 +28,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.test.demowiki.R;
 import com.test.demowiki.ui.login.LoginViewModel;
 import com.test.demowiki.ui.login.LoginViewModelFactory;
-
+import com.test.demowiki.ui.registration.RegistrationActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -138,6 +139,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClickJoin(View view) {
+        Intent startRegistration = new Intent(this, RegistrationActivity.class);
+        startActivity(startRegistration);
     }
 
 }
