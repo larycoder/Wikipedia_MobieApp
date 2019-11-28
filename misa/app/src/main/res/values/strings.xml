@@ -10,10 +10,12 @@
     <string name="menu_home">Wikipedia</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
+    <string name="menu_setting">Settings</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
     <string name="menu_about">About</string>
+    <string name="menu_customize">Customize the feed</string>
 
     <string name="title_activity_login">Log in to Wikipedia</string>
     <string name="prompt_password">Password</string>
@@ -37,9 +39,32 @@
     <string name="customize">Customize Explore feed</string>
     <string name="cancel">Cancel</string>
 
+
+    <!--Registration strings-->
+    <string name="title_activity_registration">Create an account</string>
+    <string name="donething1">Sync your reading lists</string>
+    <string name="donething2">Keep track of your contributions</string>
+    <string name="donething3">Save your preferences</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">LOG IN</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_repeat_password">Repeat password</string>
+    <string name="hint_email">Email (Optional)</string>
+    <string name="email_recommend">Recommended since email is needed for account recovery.</string>
+    <string name="next">NEXT</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="invalid_name1">The user name \"</string>
+    <string name="invalid_name2">\" is not available. Please choose a different name.</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="invalid_reg_password">The password is invalid</string>
+    <string name="invalid_repeat_password">Passwords don\'t match</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_customize">Customize the feed</string>
 
     <!-- about content -->
     <string name="Contributor">Contributor\n</string>
@@ -88,4 +113,31 @@
 
     <string name="SendCrashReport">Send crash reports</string>
     <string name="SendCrashReportPreference">Allow the app to send crash reports to us</string>
+
+
+
+<!--    Test customize-->
+
+
+    <string name="in_the_news">In the news</string>
+    <string name="on_this_day">On this day</string>
+    <string name="trending">Trending</string>
+    <string name="today_on_wiki">Today on Wikipedia</string>
+    <string name="randomizer">Randomizer</string>
+    <string name="featured_article">Featured article</string>
+    <string name="picture_of_the_day">Picture of the day</string>
+    <string name="because_you_read">Because you read</string>
+    <string name="suggested_edits">Suggested edits</string>
+    <string-array name="feed_type">
+        <item>@string/in_the_news</item>
+        <item>@string/on_this_day</item>
+        <item>@string/trending</item>
+        <item>@string/today_on_wiki</item>
+        <item>@string/randomizer</item>
+        <item>@string/featured_article</item>
+        <item>@string/picture_of_the_day</item>
+        <item>@string/because_you_read</item>
+        <item>@string/suggested_edits</item>
+
+    </string-array>
 </resources>
