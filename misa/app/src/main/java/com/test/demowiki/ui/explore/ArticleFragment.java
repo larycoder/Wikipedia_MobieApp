@@ -24,7 +24,6 @@ public class ArticleFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,12 +31,4 @@ public class ArticleFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_article, container, false);
     }
 
-//    public class Menu extends Activity {
-//        @Override
-//
-//        public boolean onCreateOptionsMenu(Menu menu) {
-//            MenuInflater inflater = getMenuInflater();
-//            return inflater.inflate(R.menu.article_menu,menu);
-//        }
-//    }
 }

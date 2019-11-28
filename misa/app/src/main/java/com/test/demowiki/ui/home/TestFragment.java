@@ -28,7 +28,7 @@ public class TestFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         MainActivity main = (MainActivity) getActivity();
-        main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        main.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return inflater.inflate(R.layout.fragment_test, container, false);
     }
 
