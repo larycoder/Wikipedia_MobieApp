@@ -11,7 +11,7 @@ import com.test.demowiki.ui.explore.ArticleFragment;
 
 public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
     private final int PAGE_COUNT = 3;
-    private String title[] = new String[] {"Home", "My List", "History"};
+    private String title[] = new String[] {"Explore", "My List", "History"};
     private Toolbar toolbar;
 
     public HomeFragmentPagerAdapter(FragmentManager fm)
