@@ -40,6 +40,7 @@ public class HomeFragment extends Fragment {
 
         pager = view.findViewById(R.id.pager);
         pager.setAdapter(adapter);
+        pager.beginFakeDrag();
 
 
         tab = view.findViewById(R.id.tab);
