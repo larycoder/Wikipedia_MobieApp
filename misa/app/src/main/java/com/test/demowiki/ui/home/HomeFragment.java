@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        PagerAdapter adapter = new HomeFragmentPagerAdapter(getActivity().getSupportFragmentManager());
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getActivity().getSupportFragmentManager(), (MainActivity) getActivity());
 
         pager = view.findViewById(R.id.pager);
         pager.setAdapter(adapter);
@@ -45,6 +45,36 @@ public class HomeFragment extends Fragment {
         tab = view.findViewById(R.id.tab);
         tab.setupWithViewPager(pager);
         setUpTabIcons();
+        final MainActivity main = (MainActivity) getActivity();
+
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        main.getSupportActionBar().setTitle("test 1");
+                        main.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        break;
+                    case 1:
+                        main.getSupportActionBar().setTitle("test 2");
+                        main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                        break;
+                    case 2:
+                        main.getSupportActionBar().setTitle("test 3");
+                        main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
+
+
+
         return view;
     }
 
