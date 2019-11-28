@@ -33,6 +33,36 @@ public class HomeFragment extends Fragment {
         TabLayout tab = view.findViewById(R.id.tab);
         tab.setupWithViewPager(pager);
 
+        final MainActivity main = (MainActivity) getActivity();
+
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        main.getSupportActionBar().setTitle("test 1");
+                        main.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        break;
+                    case 1:
+                        main.getSupportActionBar().setTitle("test 2");
+                        main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                        break;
+                    case 2:
+                        main.getSupportActionBar().setTitle("test 3");
+                        main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
+
+
+
         return view;
     }
 
