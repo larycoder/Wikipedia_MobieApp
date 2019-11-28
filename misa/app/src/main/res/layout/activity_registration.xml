@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.registration.RegistrationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:id="@+id/done_things"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@color/colorPrimaryGrey"
+                android:paddingTop="@dimen/registration_margin"
+                android:paddingLeft="@dimen/registration_margin"
+                android:paddingRight="@dimen/registration_margin"
+                >
+
+                <ImageView
+                    android:id="@+id/done1"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_done"
+                    android:layout_marginEnd="@dimen/registration_margin"
+                    android:layout_marginBottom="@dimen/registration_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/done1"
+                    android:gravity="center_vertical"
+                    android:text="@string/donething1"
+                    android:textColor="@color/colorTextGrey" />
+
+                <ImageView
+                    android:id="@+id/done2"
+                    android:layout_below="@id/done1"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="@dimen/registration_margin"
+                    android:layout_marginBottom="@dimen/registration_margin"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_done" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/done1"
+                    android:layout_toEndOf="@id/done2"
+                    android:gravity="center_vertical"
+                    android:text="@string/donething2"
+                    android:textColor="@color/colorTextGrey" />
+
+                <ImageView
+                    android:id="@+id/done3"
+                    android:layout_marginEnd="@dimen/registration_margin"
+                    android:layout_marginBottom="@dimen/registration_margin"
+                    android:layout_below="@id/done2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_done" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/done3"
+                    android:layout_below="@id/done2"
+                    android:gravity="center_vertical"
+                    android:text="@string/donething3"
+                    android:textColor="@color/colorTextGrey" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/done3"
+                    android:background="@color/colorAccentGrey" />
+
+                <TextView
+                    android:id="@+id/text_already_account"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/done3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/already_have_account"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/text_already_account"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:onClick="onClickLogIn"
+                    android:letterSpacing="0.1"
+                    android:text="@string/login"
+                    android:padding="@dimen/registration_margin"
+                    android:textColor="@color/colorAccentBlue" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/registration_margin"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/hint_username"
+                        android:textColorHint="@color/colorTextGrey"
+                        android:inputType=""
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="flagNoExtractUi"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:passwordToggleEnabled="true"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/hint_password"
+                        android:inputType="textPassword"
+                        android:textColorHint="@color/colorTextGrey"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="flagNoExtractUi"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_repeat_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:passwordToggleEnabled="true"
+                   >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_repeat_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/hint_repeat_password"
+                        android:inputType="textPassword"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorTextGrey"
+                        android:imeOptions="flagNoExtractUi"
+                      />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/hint_email"
+                        android:textColorHint="@color/colorTextGrey"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:imeOptions="flagNoExtractUi"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:text="@string/email_recommend"
+                    android:textSize="12sp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:id="@+id/button_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="@string/next"
+                    android:textColor="@color/colorPrimaryWhite"
+                    android:clickable="true"
+                    />
+
+                <TextView
+                    android:layout_marginTop="@dimen/registration_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="onClickPrivacyPolicy"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/colorAccentBlue" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
