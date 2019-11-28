@@ -10,7 +10,7 @@
     <string name="menu_home">Wikipedia</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
+    <string name="menu_setting">Settings</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
@@ -36,7 +36,58 @@
     <string name="customize">Customize Explore feed</string>
     <string name="cancel">Cancel</string>
 
+
+
+    <!--Registration strings-->
+    <string name="title_activity_registration">Create an account</string>
+    <string name="donething1">Sync your reading lists</string>
+    <string name="donething2">Keep track of your contributions</string>
+    <string name="donething3">Save your preferences</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">LOG IN</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_repeat_password">Repeat password</string>
+    <string name="hint_email">Email (Optional)</string>
+    <string name="email_recommend">Recommended since email is needed for account recovery.</string>
+    <string name="next">NEXT</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="invalid_name1">The user name \"</string>
+    <string name="invalid_name2">\" is not available. Please choose a different name.</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="invalid_reg_password">The password is invalid</string>
+    <string name="invalid_repeat_password">Passwords don\'t match</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
 
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Setting Wikipedia Preferences -->
+    <string name="ReadingListSync">Reading list syncing</string>
+    <string name="ReadingListSyncPreference">Sync reading lists across different devices by saving them to your Wikipedia account</string>
+
+    <string name="ShowImage">Show images</string>
+    <string name="ShowImagePreference">Enable or disable loading of images in pages. Uncheck this setting if your Internet connection is slow, or if your data plan is limited.</string>
+
+    <string name="PreferOfflineContent">Prefer offline content</string>
+    <string name="PreferOfflineContentPreference">Save data usage by loading articles that are available offline rather than always loading the latest version of an article</string>
+
+    <string name="SendCrashReport">Send crash reports</string>
+    <string name="SendCrashReportPreference">Allow the app to send crash reports to us</string>
 </resources>
