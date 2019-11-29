@@ -6,10 +6,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginRight="10dp"
     android:orientation="vertical"
+    android:layout_margin="10dp"
     tools:context=".ui.explore.ArticleFragment">
 
     <LinearLayout
@@ -20,6 +18,7 @@
         <LinearLayout
             android:layout_width="370dp"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -63,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center"
+            android:padding="15dp"
             android:src="@drawable/dinasour" />
 
         <TextView
