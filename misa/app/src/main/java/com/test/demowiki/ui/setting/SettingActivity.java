@@ -18,7 +18,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void onClickLanguage(View view){
-        Intent startLanguageSetting = new Intent(this, LanguageSettingActivity.class);
+        Intent startLanguageSetting = new Intent(SettingActivity.this, LanguageSettingActivity.class);
         startActivity(startLanguageSetting);
     }
 

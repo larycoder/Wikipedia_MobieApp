@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.test.demowiki.ui.explore.ArticleFragment;
+import com.test.demowiki.ui.explore.ExploreFragment;
+
 public class HomeFragmentPagerAdapter extends FragmentStatePagerAdapter {
     private final int PAGE_COUNT = 3;
     private String title[] = new String[] {"Explore", "My List", "History"};
@@ -25,7 +28,7 @@ public class HomeFragmentPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int page) {
         switch (page){
             case 0:
-                return new TestFragment();
+                return new ExploreFragment();
             case 1:
                 return new TestFragment();
             case 2:

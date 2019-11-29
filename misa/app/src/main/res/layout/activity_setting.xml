@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:orientation="vertical"
+                android:onClick="onClickLanguage"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -45,7 +46,6 @@
                     android:text="Wikipedia languages"
                     android:focusable="true"
                     android:clickable="true"
-                    android:onClick="onClickLanguage"
                     android:textColor="@color/colorTextBlack"/>
 
                 <TextView

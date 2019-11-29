@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.test.demowiki.R;
 
@@ -26,7 +27,12 @@ public class ExploreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false);
+        View view = inflater.inflate(R.layout.fragment_explore, container, false);
+        LinearLayout ll = view.findViewById(R.id.ArticleFragment);
+        for(int i = 0; i < 10; i++) {
+            ll.addView(inflater.inflate(R.layout.fragment_article, container, false));
+        }
+        return view;
     }
 
 }
