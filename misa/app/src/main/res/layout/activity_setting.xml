@@ -43,6 +43,9 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:text="Wikipedia languages"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:onClick="onClickLanguage"
                     android:textColor="@color/colorTextBlack"/>
 
                 <TextView

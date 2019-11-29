@@ -23,4 +23,6 @@
     <color name="colorButtonGrey">#3C3C3C</color>
     <color name="colorButtonBlue">#1158A8</color>
 
+    <color name="ActionBarColor">#000000</color>
+
 </resources>
