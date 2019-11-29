@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.demowiki.R;
-import com.test.demowiki.ui.customize_feed.RecyclerListAdapter;
-import com.test.demowiki.ui.customize_feed.help.ItemTouchHelperAdapter;
-import com.test.demowiki.ui.customize_feed.help.ItemTouchHelperViewHolder;
+import com.test.demowiki.ui.language_setting.help.ItemTouchHelperAdapter;
+import com.test.demowiki.ui.language_setting.help.ItemTouchHelperViewHolder;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
