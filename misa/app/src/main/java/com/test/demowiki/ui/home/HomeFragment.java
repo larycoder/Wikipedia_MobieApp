@@ -23,20 +23,13 @@ import com.test.demowiki.R;
 
 public class HomeFragment extends Fragment {
 
-    private Toolbar toolbar;
     private TabLayout tab;
     private ViewPager pager;
-
-    private int[] tabIcons = {
-            R.drawable.ic_history,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_manage
-    };
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        PagerAdapter adapter = new HomeFragmentPagerAdapter(getActivity().getSupportFragmentManager(), (MainActivity) getActivity());
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getActivity().getSupportFragmentManager());
 
         pager = view.findViewById(R.id.pager);
         pager.setAdapter(adapter);

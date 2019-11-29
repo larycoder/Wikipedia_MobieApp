@@ -4,21 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-
-import com.test.demowiki.MainActivity;
-import com.test.demowiki.ui.explore.ArticleFragment;
 
 public class HomeFragmentPagerAdapter extends FragmentStatePagerAdapter {
     private final int PAGE_COUNT = 3;
     private String title[] = new String[] {"Explore", "My List", "History"};
-    private MainActivity main;
 
-    public HomeFragmentPagerAdapter(FragmentManager fm, MainActivity main)
+    public HomeFragmentPagerAdapter(FragmentManager fm)
     {
         super(fm);
-        this.main = main;
     }
 
     @Override
@@ -46,13 +40,4 @@ public class HomeFragmentPagerAdapter extends FragmentStatePagerAdapter {
         return title[page];
     }
 
-//    @Override
-//    public int getItemPosition(@NonNull Object object) {
-//        Fragment frag = (Fragment) object;
-//        if (frag instanceof ArticleFragment)
-//            main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-//        else if (frag instanceof TestFragment)
-//            main.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        return super.getItemPosition(object);
-//    }
 }
