@@ -1,6 +1,7 @@
 package com.test.demowiki;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -25,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.SearchView;
 
 
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -85,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnQueryTextListener(this);
         searchView.setIconified(false);
         searchView.setIconifiedByDefault(false);
-
         return true;
     }
 
