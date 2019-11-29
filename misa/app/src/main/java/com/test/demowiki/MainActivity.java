@@ -16,8 +16,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import com.test.demowiki.ui.customize_feed.CustomizeActivity;
 import com.test.demowiki.ui.login.LoginActivity;
 import com.test.demowiki.ui.setting.SettingActivity;
+import com.test.demowiki.ui.about.aboutActivity;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -54,6 +56,14 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         switch (menuItem.getItemId()){
                             case R.id.nav_setting:
                                 startActivity(new Intent(MainActivity.this, SettingActivity.class));
+                                drawer.closeDrawers();
+                                return true;
+                            case R.id.nav_customize:
+                                startActivity(new Intent(MainActivity.this, CustomizeActivity.class));
+                                drawer.closeDrawers();
+                                return true;
+                            case R.id.nav_about:
+                                startActivity(new Intent(MainActivity.this, aboutActivity.class));
                                 drawer.closeDrawers();
                                 return true;
                             default:
