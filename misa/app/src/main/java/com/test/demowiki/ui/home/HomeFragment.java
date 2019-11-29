@@ -47,8 +47,6 @@ public class HomeFragment extends Fragment {
         setUpTabIcons();
         final MainActivity main = (MainActivity) getActivity();
 
-
-
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}

@@ -16,5 +16,6 @@ public class aboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
     }
 }

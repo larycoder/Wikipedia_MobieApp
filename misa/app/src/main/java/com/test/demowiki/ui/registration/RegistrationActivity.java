@@ -49,6 +49,7 @@ public class RegistrationActivity extends AppCompatActivity {
         editTextRepeatPassword = findViewById(R.id.input_layout_repeat_password);
         editTextEmail = findViewById(R.id.input_layout_email);
         buttonNext = findViewById(R.id.button_next);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
         final TextWatcher textWatcher = new TextWatcher() {
             @Override

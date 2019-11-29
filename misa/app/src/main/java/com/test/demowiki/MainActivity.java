@@ -1,14 +1,12 @@
 package com.test.demowiki;
 
-import android.app.SearchManager;
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -25,11 +23,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.preference.EditTextPreference;
 
 import android.view.Menu;
-import android.widget.EditText;
 import android.widget.SearchView;
+
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
