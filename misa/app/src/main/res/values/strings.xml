@@ -90,4 +90,5 @@
 
     <string name="SendCrashReport">Send crash reports</string>
     <string name="SendCrashReportPreference">Allow the app to send crash reports to us</string>
+    <string name="hint_search">Search Wikipedia</string>
 </resources>

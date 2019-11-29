@@ -4,13 +4,18 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,15 +28,9 @@ import com.test.demowiki.R;
 
 public class HomeFragment extends Fragment {
 
-    private Toolbar toolbar;
+
     private TabLayout tab;
     private ViewPager pager;
-
-    private int[] tabIcons = {
-            R.drawable.ic_history,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_manage
-    };
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -47,6 +46,8 @@ public class HomeFragment extends Fragment {
         tab.setupWithViewPager(pager);
         setUpTabIcons();
         final MainActivity main = (MainActivity) getActivity();
+
+
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -98,5 +99,9 @@ public class HomeFragment extends Fragment {
 
     }
 
+    public void onCreate(@Nullable Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
 }
