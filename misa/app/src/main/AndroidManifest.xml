@@ -49,7 +49,7 @@
 
         <activity
             android:name=".ui.about.aboutActivity"
-            android:label="@string/menu_about"
+            android:labe="@string/menu_about"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

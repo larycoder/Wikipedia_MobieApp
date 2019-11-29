@@ -12,6 +12,6 @@ public class CustomizeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customize);
-
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
     }
 }

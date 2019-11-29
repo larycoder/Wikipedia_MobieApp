@@ -55,15 +55,15 @@ public class HomeFragment extends Fragment {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        main.getSupportActionBar().setTitle("test 1");
+                        main.getSupportActionBar().setTitle("Demo Wikipedia");
                         main.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                         break;
                     case 1:
-                        main.getSupportActionBar().setTitle("test 2");
+                        main.getSupportActionBar().setTitle("My Lists");
                         main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                         break;
                     case 2:
-                        main.getSupportActionBar().setTitle("test 3");
+                        main.getSupportActionBar().setTitle("History");
                         main.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                         break;
                 }
