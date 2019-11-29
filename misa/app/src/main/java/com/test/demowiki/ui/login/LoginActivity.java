@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
-        getSupportActionBar().setTitle("Hellow world");
+
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
