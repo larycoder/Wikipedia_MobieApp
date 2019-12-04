@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="10dp"
+    android:background="@color/colorPrimaryGrey"
     tools:context=".ui.explore.ArticleFragment">
 
     <LinearLayout
@@ -16,7 +17,8 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="370dp"
+            android:layout_width="0dp"
+            android:layout_weight="19"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:orientation="vertical">
@@ -46,9 +48,10 @@
             android:id="@+id/article_option"
             style="?android:attr/borderlessButtonStyle"
             android:background="?android:attr/selectableItemBackground"
-            android:layout_width="21dp"
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="35dp"
-            android:drawableLeft="@drawable/ic_article_option" />
+            android:drawableRight="@drawable/ic_article_option" />
 
     </LinearLayout>
 
