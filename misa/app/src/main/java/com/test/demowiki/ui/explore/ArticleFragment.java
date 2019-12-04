@@ -1,7 +1,6 @@
 package com.test.demowiki.ui.explore;
 
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,13 +13,11 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.test.demowiki.MainActivity;
 import com.test.demowiki.R;
-import com.test.demowiki.TestFragmentActivity;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArticleFragment extends Fragment {
+public class ArticleFragment extends Fragment implements PopupMenu.OnMenuItemClickListener {
 
 
     public ArticleFragment() {
@@ -64,4 +61,21 @@ public class ArticleFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Toast.makeText(getActivity().getApplicationContext(), "Selected Item: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.hide_article:
+                // do your code
+                return true;
+            case R.id.hide_article_type:
+                return true;
+            // do your code
+            case R.id.cancel_article:
+                // do your code
+                return true;
+            default:
+                return false;
+        }
+    }
 }
