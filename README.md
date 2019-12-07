@@ -4,8 +4,8 @@
 ## Group: 5
 
 ## Team Member:
-- Le Nhu Chu Hiep - BI8062
-- Pham Thi Ngoc Mai
-- Doan Lien Huong
-- Vu Khanh Huyen
-- Pham Phan Bach
+- Le Nhu Chu Hiep - BI8 - 062
+- Pham Thi Ngoc Mai - BI8 - 109
+- Doan Lien Huong - BI8 - 078
+- Vu Khanh Huyen - BI8 - 074
+- Pham Phan Bach - BI8 - 022
