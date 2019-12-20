@@ -13,5 +13,8 @@ public class CustomizeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customize);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+        RecyclerListFragment fragment = new RecyclerListFragment();
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.customize_act, fragment).commit();
     }
 }

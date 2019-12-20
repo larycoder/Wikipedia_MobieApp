@@ -46,8 +46,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
             itemViewHolder.onItemSelected();
         }
 
-        super.onSelectedChanged(viewHolder, actionState);
-    }
+           }
 
     @Override
     public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
