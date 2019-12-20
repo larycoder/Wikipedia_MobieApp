@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.recyclerview.widget.RecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/recycler_view"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:scrollbars="vertical"-->
+<!--    tools:context=".ui.customize_feed.RecyclerListFragment" />-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recycler_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_explore"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    tools:context=".ui.customize_feed.RecyclerListFragment" />
+    tools:context=".ui.customize_feed.RecyclerListFragment">
+<androidx.recyclerview.widget.RecyclerView
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/recycler_view"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryGrey"
+    >
+
+</androidx.recyclerview.widget.RecyclerView>
+</FrameLayout>

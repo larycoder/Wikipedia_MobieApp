@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="64dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:id="@+id/feed_type"
+        android:text="In the news"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:layout_marginBottom="2dp"
+        />
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feed_type"
+        android:layout_alignParentStart="true"
+        android:id="@+id/feed_type_desc"
+        android:text="Articles about current events"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextGrey"
+        android:textStyle="normal"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/feed_type"
+        android:id="@+id/feed_switch" />
+
+
+
+</RelativeLayout>

@@ -7,12 +7,13 @@
     android:id="@+id/customize_act"
 
     tools:context=".ui.customize_feed.CustomizeActivity">
-    <fragment
-        class="com.test.demowiki.ui.customize_feed.RecyclerListFragment"
-        android:id="@+id/rvlist_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </fragment>
+<!--    <fragment-->
+<!--        class="com.test.demowiki.ui.customize_feed.RecyclerListFragment"-->
+<!--        android:id="@+id/rvlist_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--    </fragment>-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
