@@ -138,6 +138,25 @@
         <item>@string/picture_of_the_day</item>
         <item>@string/because_you_read</item>
         <item>@string/suggested_edits</item>
-
+    </string-array>
+    <string name="in_the_news_desc">Articles about current events</string>
+    <string name="on_this_day_desc">Events in history on this day</string>
+    <string name="trending_desc">Daily most-viewed articles</string>
+    <string name="today_on_wiki_desc">Main page of Wikipedia with daily feature content</string>
+    <string name="randomizer_desc">Generate random articles to read</string>
+    <string name="featured_article_desc">Daily featured article on Wikipedia</string>
+    <string name="picture_of_the_day_desc">Daily featured image from Wikipedia Commons</string>
+    <string name="because_you_read_desc">Suggestions based on a recently read article from your history</string>
+    <string name="suggested_edits_desc">Suggestions to add content to Wikipedia</string>
+    <string-array name="feed_type_desc">
+        <item>@string/in_the_news_desc</item>
+        <item>@string/on_this_day_desc</item>
+        <item>@string/trending_desc</item>
+        <item>@string/today_on_wiki_desc</item>
+        <item>@string/randomizer_desc</item>
+        <item>@string/featured_article_desc</item>
+        <item>@string/picture_of_the_day_desc</item>
+        <item>@string/because_you_read_desc</item>
+        <item>@string/suggested_edits_desc</item>
     </string-array>
 </resources>
