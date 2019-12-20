@@ -159,4 +159,8 @@
         <item>@string/because_you_read_desc</item>
         <item>@string/suggested_edits_desc</item>
     </string-array>
+
+    <string name="action_show_all">Show all</string>
+    <string name="action_hide_all">Hide all</string>
+    <string name="action_restore_default_view">Restore default view</string>
 </resources>
