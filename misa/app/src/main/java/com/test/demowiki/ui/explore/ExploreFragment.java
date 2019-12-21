@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.test.demowiki.R;
+import com.test.demowiki.ui.explore.NewsCard.CardNewsFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +33,10 @@ public class ExploreFragment extends Fragment {
         for(int i = 0; i < 4; i++) {
             // add fragment for article
             getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new ArticleFragment()).commit();
+            getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new CardNewsFragment()).commit();
+
         }
+
         return view;
     }
 

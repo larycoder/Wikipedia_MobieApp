@@ -163,4 +163,10 @@
     <string name="action_show_all">Show all</string>
     <string name="action_hide_all">Hide all</string>
     <string name="action_restore_default_view">Restore default view</string>
+
+<!--    in the news card option menu-->
+    <string name="hide_this_card">Hide this card</string>
+    <string name="edit_language">Edit card language</string>
+    <string name="customize_feed">Customize the feed</string>
+
 </resources>

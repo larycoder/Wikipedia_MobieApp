@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/hide_card"
+        android:title="@string/hide_this_card"/>
+    <item android:id="@+id/edit_card_lang"
+        android:title="@string/edit_language"/>
+    <item android:id="@+id/customize_feed"
+        android:title="@string/customize_feed"/>
+</menu>

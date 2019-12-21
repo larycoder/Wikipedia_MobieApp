@@ -36,10 +36,16 @@ public class RecyclerListFragment extends Fragment {
     public RecyclerListFragment() {
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_customize_main, container, false);
+
         mFeedTypeList = new ArrayList<>();
         adapter = new RecyclerListAdapter(getContext(),mFeedTypeList);
         feedTypeArr=getContext().getResources().getStringArray(R.array.feed_type);
@@ -91,6 +97,13 @@ public class RecyclerListFragment extends Fragment {
 //        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(adapter);
 //        mItemTouchHelper = new ItemTouchHelper(callback);
 //        mItemTouchHelper.attachToRecyclerView(recyclerView);
+//    }
+//    private int check;
+//
+//    @Override
+//    public void onSaveInstanceState(@NonNull Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putInt("check",check);
 //    }
 
     private void setDefaultData() {
