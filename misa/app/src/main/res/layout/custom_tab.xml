@@ -4,4 +4,6 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:id="@+id/custom_tab"
+    android:textSize="12sp"
+    android:letterSpacing="0.07"
     android:textColor="@color/tab_text_selector"/>
