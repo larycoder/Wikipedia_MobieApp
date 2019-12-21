@@ -41,7 +41,6 @@ public class CustomizeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_customize, menu);
-        getSupportActionBar().setIcon(R.drawable.ic_triple_dot);
         return true;
     }
 
@@ -62,4 +61,5 @@ public class CustomizeActivity extends AppCompatActivity {
                 return false;
         }
     }
+
 }
