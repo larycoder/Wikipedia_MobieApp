@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item-->
+<!--        android:id="@+id/triple_dot_button"-->
+<!--        android:title=""-->
+<!--        android:icon="@drawable/ic_triple_dot"-->
+<!--        app:showAsAction="always">-->
+<!--        <menu>-->
+            <item
+                android:id="@+id/action_show_all"
+                android:title="@string/action_show_all"/>
+            <item
+                android:id="@+id/action_hide_all"
+                android:title="@string/action_hide_all"/>
+            <item
+                android:id="@+id/action_restore_default_view"
+                android:title="@string/action_restore_default_view"/>
+
+
+<!--        </menu>-->
+
+<!--    </item>-->
+
+</menu>

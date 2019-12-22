@@ -16,22 +16,27 @@
         android:gravity="center_vertical"
         android:paddingTop="16dp" />
 
-    <fragment
-        android:name="com.test.demowiki.ui.language_setting.LanguageListFragment"
-        android:id="@+id/rv_language_list_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/language_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </fragment>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:background="@drawable/ic_add"
             android:scaleType="fitCenter"
-            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
             />
 
         <TextView

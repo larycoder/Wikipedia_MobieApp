@@ -13,7 +13,11 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="63dp"
         android:layout_weight="1"
-        app:tabIndicatorHeight="0dp" />
+        app:tabIndicatorHeight="0dp"
+        android:background="@android:color/white"
+        android:elevation="10dp"
+        app:tabUnboundedRipple="true"
+        />
 </LinearLayout>
