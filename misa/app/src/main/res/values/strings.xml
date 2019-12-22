@@ -169,4 +169,12 @@
     <string name="edit_language">Edit card language</string>
     <string name="customize_feed">Customize the feed</string>
 
+<!--    language setting-->
+    <string name="english">English</string>
+    <string name="vietnamese">Tiếng Việt</string>
+
+    <string-array name="lang_array">
+        <item>@string/english</item>
+        <item>@string/vietnamese</item>
+    </string-array>
 </resources>

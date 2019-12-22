@@ -1,53 +1,75 @@
 package com.test.demowiki.ui.customize_feed;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.material.tabs.TabLayout;
 import com.test.demowiki.R;
+import com.test.demowiki.ui.customize_feed.help.SimpleItemTouchHelperCallback;
+
+import java.util.ArrayList;
 
 public class CustomizeActivity extends AppCompatActivity {
-    //private RecyclerListFragment mRecycleListFragment;
-    RecyclerListFragment fragment;
-    private int check;
+    ArrayList<FeedSetting> mFeedTypeList;
+    RecyclerListAdapter adapter;
+    private ItemTouchHelper mItemTouchHelper;
+    String[] feedTypeArr;
+    String[] feedTypeDescArr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("HUONG","On Create!!");
+        Log.i("CUSTOM","On Create!!");
 
-        setContentView(R.layout.activity_customize);
+        setContentView(R.layout.customize_activity);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
-//        if(savedInstanceState!=null)
-//            fragment = (RecyclerListFragment) getSupportFragmentManager().findFragmentByTag("FRAGMENT_TAG");
-//        else{
-        fragment = new RecyclerListFragment();
-        getSupportFragmentManager().beginTransaction().add(
-                    R.id.customize_act, fragment,"FRAGMENT_TAG").commit();
 
+        mFeedTypeList = new ArrayList<>();
+        adapter = new RecyclerListAdapter(this,mFeedTypeList);
+        feedTypeArr=this.getResources().getStringArray(R.array.feed_type);
+        feedTypeDescArr=this.getResources().getStringArray(R.array.feed_type_desc);
 
-//        if (savedInstanceState != null) {
-//            //Restore fragment's instance
-//            fragment = (RecyclerListFragment) getSupportFragmentManager().getFragment(savedInstanceState, "Custom Fragment");
-//        }
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
+        setDefaultData();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Drawable mDivider = ContextCompat.getDrawable(this, R.drawable.divider);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                LinearLayoutManager.VERTICAL);
+        dividerItemDecoration.setDrawable(mDivider);
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(adapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
-//    @Override
-//    protected void onSaveInstanceState(@NonNull Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        //Save fragment's instance
-//        getSupportFragmentManager().putFragment(outState, "Custom Fragment", fragment);
-//
-//    }
+
+
+    private void setDefaultData() {
+        for (int i =0;i<feedTypeArr.length;i++){
+            FeedSetting mfType= new FeedSetting();
+            mfType.setFeedType(feedTypeArr[i]);
+            mfType.setFeedTypeDesc(feedTypeDescArr[i]);
+            mfType.setStatus(true);
+            mFeedTypeList.add(mfType);
+            adapter.notifyDataSetChanged();
+        }
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,45 +95,5 @@ public class CustomizeActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i("HUONG","On Start!!");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("HUONG","On Stop!!");
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("HUONG","On Destroy!!");
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("HUONG","On Pause!!");
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i("HUONG","On Resume!!");
-
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i("HUONG","On Restart!!");
-
-    }
 
 }
