@@ -28,6 +28,7 @@
     <string name="prompt_email">Username</string>
 
     <string name="search">Search Wikipedia</string>
+    <string name="search_hint">Search Wikipedia</string>
     <string name="article_type">Feature article</string>
     <string name="article_source">From English Wikipedia</string>
     <string name="article_title">Spinophorosaurus</string>

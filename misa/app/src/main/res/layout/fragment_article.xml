@@ -42,9 +42,9 @@
                     android:textColor="@color/colorTextGrey"
                     android:textSize="12sp" />
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+<!--                <Space-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="10dp" />-->
 
             </LinearLayout>
 
@@ -60,8 +60,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="176dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:orientation="vertical">
@@ -70,12 +71,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:padding="15dp"
+
                 android:src="@drawable/dinasour" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:text="@string/article_title"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="20sp"
@@ -85,25 +87,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+<!--            <Space-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:text="@string/article_summary"
                 android:textColor="@color/colorTextGrey"
                 android:textSize="12sp" />
 
             <Space
                 android:layout_width="10dp"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
+                android:padding="5dp"
                 android:text="@string/article_content"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="12sp" />
@@ -111,7 +115,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <Button
                 android:id="@+id/button"
