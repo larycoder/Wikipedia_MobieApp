@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.test.demowiki.R;
@@ -25,6 +27,7 @@ public class CustomizeActivity extends AppCompatActivity {
     private ItemTouchHelper mItemTouchHelper;
     String[] feedTypeArr;
     String[] feedTypeDescArr;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class CustomizeActivity extends AppCompatActivity {
         feedTypeArr=this.getResources().getStringArray(R.array.feed_type);
         feedTypeDescArr=this.getResources().getStringArray(R.array.feed_type_desc);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         setDefaultData();
@@ -56,9 +59,22 @@ public class CustomizeActivity extends AppCompatActivity {
         mItemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
-
+//    public void hideAll(ArrayList<FeedSetting> mFeedTypeList){
+//        for (int i=0;i<mFeedTypeList.size();i++){
+//            mFeedTypeList.get(i).setStatus(false);
+//            adapter.notifyDataSetChanged();
+//        }
+//    }
+//    public void showAll(ArrayList<FeedSetting> mFeedTypeList){
+//        for (int i=0;i<mFeedTypeList.size();i++){
+//            mFeedTypeList.get(i).setStatus(true);
+//            adapter.notifyDataSetChanged();
+//
+//        }
+//    }
 
     private void setDefaultData() {
+        if(mFeedTypeList.size()==0){
         for (int i =0;i<feedTypeArr.length;i++){
             FeedSetting mfType= new FeedSetting();
             mfType.setFeedType(feedTypeArr[i]);
@@ -66,6 +82,17 @@ public class CustomizeActivity extends AppCompatActivity {
             mfType.setStatus(true);
             mFeedTypeList.add(mfType);
             adapter.notifyDataSetChanged();
+        }}
+        else{
+            mFeedTypeList.clear();
+            for (int i =0;i<feedTypeArr.length;i++){
+                FeedSetting mfType= new FeedSetting();
+                mfType.setFeedType(feedTypeArr[i]);
+                mfType.setFeedTypeDesc(feedTypeDescArr[i]);
+                mfType.setStatus(true);
+                mFeedTypeList.add(mfType);
+                adapter.notifyDataSetChanged();
+            }
         }
 
     }
@@ -82,12 +109,15 @@ public class CustomizeActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_show_all:
                 Toast.makeText(getApplicationContext(), "Show all", Toast.LENGTH_LONG).show();
+//                showAll(mFeedTypeList);
                 return true;
             case R.id.action_hide_all:
                 Toast.makeText(getApplicationContext(), "Hide all", Toast.LENGTH_LONG).show();
+//                hideAll(mFeedTypeList);
                 return true;
             case R.id.action_restore_default_view:
                 Toast.makeText(getApplicationContext(), "Restore default views", Toast.LENGTH_LONG).show();
+                setDefaultData();
                 return true;
             default:
                 super.onOptionsItemSelected(item);
