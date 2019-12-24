@@ -30,10 +30,11 @@ public class ExploreFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_explore, container, false);
         LinearLayout ll = view.findViewById(R.id.ArticleFragment);
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < 2; i++) {
             // add fragment for article
             getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new ArticleFragment()).commit();
             getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new CardNewsFragment()).commit();
+            getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new PictureCardFragment()).commit();
 
         }
 

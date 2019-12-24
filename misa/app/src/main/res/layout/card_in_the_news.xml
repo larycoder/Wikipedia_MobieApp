@@ -13,8 +13,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:cardElevation="2dp"
-        app:cardCornerRadius="2dp"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -40,11 +42,10 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:id="@+id/card_type_news"
                 android:gravity="center_vertical"
-                android:textColor="@android:color/black"
                 />
             <ImageButton
                 android:id="@+id/option_button_news_article"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:src="@drawable/ic_article_option"
@@ -52,6 +53,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 />
+            <TextView
+                android:id="@+id/date_news_card"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/option_button_news_article"
+                android:gravity="center_vertical"
+                android:text="24 Dec 2019"
+                android:textSize="12sp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

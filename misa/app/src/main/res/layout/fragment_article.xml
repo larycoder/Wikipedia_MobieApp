@@ -5,7 +5,10 @@
     android:id="@+id/featured_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     android:elevation="5dp"
     android:focusable="true"
     android:clickable="true"
@@ -14,7 +17,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryGrey"
         android:orientation="vertical"
         tools:context=".ui.explore.ArticleFragment"
         >
@@ -57,8 +59,9 @@
                 android:id="@+id/article_option"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:paddingTop="2dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:drawableRight="@drawable/ic_article_option" />
 
@@ -82,7 +85,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="16dp"
                 android:text="@string/article_title"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="20sp"
@@ -90,7 +93,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="5dp" />
+                android:layout_height="0dp" />
 
 <!--            <Space-->
 <!--                android:layout_width="match_parent"-->
@@ -99,7 +102,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:paddingStart="16dp"
                 android:text="@string/article_summary"
                 android:textColor="@color/colorTextGrey"
                 android:textSize="12sp" />
@@ -112,7 +115,9 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
-                android:padding="5dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="10dp"
                 android:text="@string/article_content"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="12sp" />
@@ -120,19 +125,35 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="5dp" />
+                android:layout_height="16dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/button_save"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:drawableStart="@drawable/ic_save_article"
+                    android:text="@string/save_button"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_alignParentStart="true"/>
+                <Button
+                    android:id="@+id/btn_share"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:drawableEnd="@drawable/ic_share"
+                    android:background="@android:color/transparent"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:gravity="center_vertical"/>
+            </RelativeLayout>
 
-            <Button
-                android:id="@+id/button"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_gravity="center_horizontal|left"
-                android:background="?android:attr/selectableItemBackground"
-                android:drawableStart="@drawable/ic_save_article"
-                android:gravity="center|left"
-                android:text="@string/save_button"
-                android:textSize="10sp" />
+
 
         </LinearLayout>
     </LinearLayout>
