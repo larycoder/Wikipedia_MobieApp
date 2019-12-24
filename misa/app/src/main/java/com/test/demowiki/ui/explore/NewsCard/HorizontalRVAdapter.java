@@ -1,6 +1,7 @@
 package com.test.demowiki.ui.explore.NewsCard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.test.demowiki.MainActivity;
 import com.test.demowiki.R;
+import com.test.demowiki.ui.article_detail.ScrollingActivity;
 
 import java.util.ArrayList;
 
@@ -40,6 +43,9 @@ public class HorizontalRVAdapter extends RecyclerView.Adapter<HorizontalRVAdapte
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, article.getDescription(),Toast.LENGTH_LONG).show();
+                Intent startScroll = new Intent(context, ScrollingActivity.class);
+                context.startActivity(startScroll);
+
             }
         });
 

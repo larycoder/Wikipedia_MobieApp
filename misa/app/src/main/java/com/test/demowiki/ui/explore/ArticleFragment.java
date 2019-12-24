@@ -1,8 +1,10 @@
 package com.test.demowiki.ui.explore;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +16,8 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.test.demowiki.R;
+import com.test.demowiki.ui.article_detail.ScrollingActivity;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -56,6 +60,14 @@ public class ArticleFragment extends Fragment implements PopupMenu.OnMenuItemCli
                 });
                 popup.inflate(R.menu.article_menu);
                 popup.show();
+            }
+        });
+        CardView card = view.findViewById(R.id.featured_card);
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startScroll = new Intent(getContext(), ScrollingActivity.class);
+                startActivity(startScroll);
             }
         });
         return view;
