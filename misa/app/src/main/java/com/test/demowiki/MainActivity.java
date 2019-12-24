@@ -1,6 +1,7 @@
 package com.test.demowiki;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home).setDrawerLayout(drawer).build();
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_hamburger_icon_24dp);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        hideKeyboard(this);
     }
 
 
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnQueryTextListener(this);
         searchView.setIconified(false);
         searchView.setIconifiedByDefault(false);
+        searchView.clearFocus(); //finally found the way to hide keyboard
         return true;
     }
 
@@ -114,5 +117,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onQueryTextChange(String s) {
         return false;
     }
+
+//    public static void hideKeyboard(Activity activity){
+//        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+//        View v= activity.getCurrentFocus();
+//        if(v== null){
+//            v= new View(activity);
+//        }
+//        imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+//        v.clearFocus();
+//    }
 }
 
