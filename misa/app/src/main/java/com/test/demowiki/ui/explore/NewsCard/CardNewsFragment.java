@@ -82,7 +82,7 @@ public class CardNewsFragment extends Fragment {
     private void setData() {
         for (int i=0;i<10;i++){
             ArticleCardNews article = new ArticleCardNews();
-            article.setDescription(getString(R.string.article_summary));
+            article.setDescription(getString(R.string.article_content));
             article.setImageResId(R.drawable.dinasour);
             articleList.add(article);
         }
