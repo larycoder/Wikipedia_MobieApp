@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/search_scroll"
-        android:title="@string/hint_search"
-        android:icon="@drawable/ic_search"
-        app:showAsAction="ifRoom"
-        app:actionViewClass="android.widget.SearchView" />
+
     <item
         android:title="Explore"
         android:id="@+id/explore_action_scroll"
@@ -19,3 +15,8 @@
         android:id="@+id/history_action_scroll"
         app:showAsAction="never"/>
 </menu>
+<!--<item android:id="@+id/search_scroll"-->
+<!--android:title="@string/hint_search"-->
+<!--android:icon="@drawable/ic_search"-->
+<!--app:showAsAction="ifRoom"-->
+<!--app:actionViewClass="android.widget.SearchView" />-->
