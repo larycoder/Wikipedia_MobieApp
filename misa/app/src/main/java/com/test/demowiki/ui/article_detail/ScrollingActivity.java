@@ -22,6 +22,9 @@ import com.test.demowiki.R;
 public class ScrollingActivity extends AppCompatActivity {
     private Menu menu;
     AlertDialog.Builder builder;
+    boolean isPress = false;
+    ImageButton saveBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,24 @@ public class ScrollingActivity extends AppCompatActivity {
                 alert.show();
             }
         });
+
+        saveBtn = findViewById(R.id.save_article_detail);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isPress==false){
+                    saveBtn.setImageResource(R.drawable.ic_bookmark_blue);
+                    Toast.makeText(ScrollingActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                    isPress =true;
+                }
+                else{
+                    saveBtn.setImageResource(R.drawable.ic_save_article);
+                    Toast.makeText(ScrollingActivity.this, "Removed from your list", Toast.LENGTH_SHORT).show();
+                    isPress =false;
+                }
+
+            }
+        });
 }
 
     @Override
@@ -112,4 +133,5 @@ public class ScrollingActivity extends AppCompatActivity {
         MenuItem item = menu.findItem(id);
         item.setVisible(true);
     }
+
 }
