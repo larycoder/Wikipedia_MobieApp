@@ -45,5 +45,70 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_scrolling" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        >
+        <ImageButton
+            android:id="@+id/save_article_detail"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_save_article"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:layout_alignParentStart="true"/>
+        <ImageButton
+            android:layout_toRightOf="@id/save_article_detail"
+            android:id="@+id/share_article_detail"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_share"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"/>
+        <ImageButton
+            android:layout_toRightOf="@id/share_article_detail"
+            android:id="@+id/translate_article_detail"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_translate"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"/>
+        <ImageButton
+            android:layout_toRightOf="@id/translate_article_detail"
+            android:id="@+id/find_in_page_article_detail"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_find_in_page"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"/>
+        <ImageButton
+            android:layout_toRightOf="@id/find_in_page_article_detail"
+            android:id="@+id/format_size_article_detail"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_format_size"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:layout_alignParentEnd="true"
+            android:id="@+id/list_menu_article_detail"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:src="@drawable/ic_list" />
+
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
