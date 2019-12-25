@@ -184,6 +184,7 @@
     <string name="sample_picture_desc">Nativity scene in the St Viktor Church, Dulmen, North Rhine-Westphalia, Germany (2018)</string>
     <string name="sample_date">24 Dec 2019</string>
     <string name="download">DOWNLOAD</string>
+    <string name="more_like_this">MORE LIKE THIS</string>
 
     <string-array name="lang_array">
         <item>@string/english</item>

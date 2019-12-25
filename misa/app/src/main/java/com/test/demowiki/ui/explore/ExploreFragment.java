@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.test.demowiki.R;
 import com.test.demowiki.ui.explore.NewsCard.CardNewsFragment;
+import com.test.demowiki.ui.explore.trending_card.TrendingCardFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +36,7 @@ public class ExploreFragment extends Fragment {
             getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new ArticleFragment()).commit();
             getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new CardNewsFragment()).commit();
             getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new PictureCardFragment()).commit();
+            getFragmentManager().beginTransaction().add(R.id.ArticleFragment, new TrendingCardFragment()).commit();
 
         }
 
