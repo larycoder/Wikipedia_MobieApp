@@ -62,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingTop="2dp"
+                android:paddingEnd="5dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:drawableRight="@drawable/ic_article_option" />
 
