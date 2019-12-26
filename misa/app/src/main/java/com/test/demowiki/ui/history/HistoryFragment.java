@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -76,7 +77,7 @@ public class HistoryFragment extends Fragment {
                 final int position=viewHolder.getAdapterPosition();
                 final Item item = adapter.getData().get(position);
                 adapter.removeItem(position);
-                Snackbar snackbar = Snackbar.make(getView(),"Removed from History",3000);
+                Snackbar snackbar = Snackbar.make(getView(),"Removed from History",4000);
                 snackbar.setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -84,8 +85,14 @@ public class HistoryFragment extends Fragment {
                         recyclerView.scrollToPosition(position);
                     }
                 });
-                snackbar.setActionTextColor(getResources().getColor(R.color.colorAccentBlue));
+                snackbar.setActionTextColor(getResources().getColor(R.color.snackBarColor));
+                CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams)
+                        snackbar.getView().getLayoutParams();
+                params.setMargins(10, 10, 10, 100);
+                snackbar.getView().setLayoutParams(params);
+                snackbar.getView().setBackgroundColor(getResources().getColor(R.color.colorPrimaryDarkGrey));
                 snackbar.show();
+
 
             }
         };

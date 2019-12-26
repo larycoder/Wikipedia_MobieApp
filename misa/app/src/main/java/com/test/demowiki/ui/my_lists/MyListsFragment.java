@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -83,7 +84,12 @@ public class MyListsFragment extends Fragment {
                         recyclerView.scrollToPosition(position);
                     }
                 });
-                snackbar.setActionTextColor(getResources().getColor(R.color.colorAccentBlue));
+                snackbar.setActionTextColor(getResources().getColor(R.color.snackBarColor));
+                CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams)
+                        snackbar.getView().getLayoutParams();
+                params.setMargins(10, 10, 10, 100);
+                snackbar.getView().setLayoutParams(params);
+                snackbar.getView().setBackgroundColor(getResources().getColor(R.color.colorPrimaryDarkGrey));
                 snackbar.show();
 
             }
