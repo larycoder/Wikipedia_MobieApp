@@ -14,8 +14,11 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -28,6 +31,7 @@ import com.test.demowiki.wikiAPI.wikipediaAPI;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class SearchActivity extends AppCompatActivity {
 	RecyclerView recyclerView;
@@ -108,7 +112,46 @@ public class SearchActivity extends AppCompatActivity {
 					@Override
 					public void onResponse(String response) {
 						List<String> tittles = api.getTitleList(response);
-						Toast.makeText(SearchActivity.this, tittles.get(9), Toast.LENGTH_SHORT).show();
+						LinearLayout searchList = findViewById(R.id.search_item_test);
+
+						if(tittles.size() >= 1) {
+							TextView title0 = searchList.findViewById(R.id.search_article_title0);
+							title0.setText(tittles.get(0));
+							TextView summary0 = searchList.findViewById(R.id.search_article_summary0);
+							summary0.setText(Html.fromHtml(api.getSnippetList(response).get(0)));
+						}
+						else{
+							TextView title0 = searchList.findViewById(R.id.search_article_title0);
+							title0.setText(null);
+							TextView summary0 = searchList.findViewById(R.id.search_article_summary0);
+							summary0.setText(null);
+						}
+
+						if(tittles.size() >= 2) {
+							TextView title1 = searchList.findViewById(R.id.search_article_title1);
+							title1.setText(tittles.get(1));
+							TextView summary1 = searchList.findViewById(R.id.search_article_summary1);
+							summary1.setText(Html.fromHtml(api.getSnippetList(response).get(1)));
+						}
+						else{
+							TextView title1 = searchList.findViewById(R.id.search_article_title1);
+							title1.setText(null);
+							TextView summary1 = searchList.findViewById(R.id.search_article_summary1);
+							summary1.setText(null);
+						}
+
+						if(tittles.size() >= 3) {
+							TextView title2 = searchList.findViewById(R.id.search_article_title2);
+							title2.setText(tittles.get(2));
+							TextView summary2 = searchList.findViewById(R.id.search_article_summary2);
+							summary2.setText(Html.fromHtml(api.getSnippetList(response).get(2)));
+						}
+						else{
+							TextView title2 = searchList.findViewById(R.id.search_article_title2);
+							title2.setText(null);
+							TextView summary2 = searchList.findViewById(R.id.search_article_summary2);
+							summary2.setText(null);
+						}
 					}
 				};
 				StringRequest stringRequest = new StringRequest(Request.Method.GET, searchUrl, response, null);

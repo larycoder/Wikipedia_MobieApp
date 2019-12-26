@@ -28,6 +28,22 @@ public class wikipediaAPI {
         return wikiData.getListTitle();
     }
 
+    public List<String> getSnippetList(String jsonObject){
+        JSONObject obj;
+        List<String> searchList = new ArrayList<>();
+        try {
+            obj = new JSONObject(jsonObject);
+            JSONArray search = obj.getJSONObject("query").getJSONArray("search");
+            for(int i=0; i<search.length(); i++){
+                searchList.add(search.getJSONObject(i).getString("snippet"));
+            }
+            return searchList;
+        } catch (JSONException e){
+            Log.e("Snippet JSON Exception", e.toString());
+            return null;
+        }
+    }
+
     public String getArticleUrl(String title){
         return basePageUrl+title;
     }
