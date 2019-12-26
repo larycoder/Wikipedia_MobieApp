@@ -109,6 +109,11 @@
             android:gravity="center"
             android:src="@drawable/ic_list" />
 
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
     </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

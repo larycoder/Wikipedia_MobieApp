@@ -1,5 +1,7 @@
 package com.test.demowiki.ui.article_detail;
 
+import com.test.demowiki.wikiAPI.wikipediaAPI;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,12 +14,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.test.demowiki.R;
+
 
 public class ScrollingActivity extends AppCompatActivity {
     private Menu menu;
@@ -91,6 +95,10 @@ public class ScrollingActivity extends AppCompatActivity {
                     isPress =false;
                 }
 
+                wikipediaAPI wikiAPI = new wikipediaAPI();
+
+                WebView webView = (WebView) findViewById(R.id.webview);
+                webView.loadUrl(wikiAPI.getArticleUrl("Newton"));
             }
         });
 }
