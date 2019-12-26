@@ -18,10 +18,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
 import com.test.demowiki.ui.explore.trending_card.Item;
 import com.test.demowiki.ui.history.ItemListAdapter;
+import com.test.demowiki.wikiAPI.wikipediaAPI;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 	RecyclerView recyclerView;
@@ -96,7 +102,17 @@ public class SearchActivity extends AppCompatActivity {
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
-				Toast.makeText(SearchActivity.this, query, Toast.LENGTH_LONG).show();
+				final wikipediaAPI api = new wikipediaAPI();
+				String searchUrl = api.getTitleSearchUrl(10, query);
+				Response.Listener<String> response =  new Response.Listener<String>() {
+					@Override
+					public void onResponse(String response) {
+						List<String> tittles = api.getTitleList(response);
+						Toast.makeText(SearchActivity.this, tittles.get(9), Toast.LENGTH_SHORT).show();
+					}
+				};
+				StringRequest stringRequest = new StringRequest(Request.Method.GET, searchUrl, response, null);
+				VolleySingleton.getQueue().add(stringRequest);
 				return false;
 			}
 			@Override
@@ -107,5 +123,7 @@ public class SearchActivity extends AppCompatActivity {
 		});
 		return true;
 	}
+
+
 
 }
