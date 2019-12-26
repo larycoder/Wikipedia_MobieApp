@@ -5,11 +5,18 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    tools:context=".SearchActivity"
+    android:background="@color/colorPrimaryGrey">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/search_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorPrimary"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/search_toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

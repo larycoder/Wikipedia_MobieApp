@@ -35,13 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private Toolbar toolbar;
-    private RequestQueue queue;
+//    private RequestQueue queue;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        VolleySingleton.setQueue(Volley.newRequestQueue(getApplicationContext()));
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // add volley queue for application
-        queue = Volley.newRequestQueue(getApplicationContext());
+//        queue = Volley.newRequestQueue(getApplicationContext());
     }
 
 
