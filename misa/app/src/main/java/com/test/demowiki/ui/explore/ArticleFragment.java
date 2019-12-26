@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.test.demowiki.R;
 import com.test.demowiki.ui.article_detail.ScrollingActivity;
-import com.test.demowiki.ui.article_detail.WebViewActivity;
 
 /**
  * A simple {@link Fragment} subclass.

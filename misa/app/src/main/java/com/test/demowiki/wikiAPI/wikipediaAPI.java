@@ -1,22 +1,17 @@
 package com.test.demowiki.wikiAPI;
 
-import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class wikipediaAPI {
@@ -54,16 +49,52 @@ public class wikipediaAPI {
             return null;
         }
     }
-    public String getImageOfDayUrl(String jsonObject){
+
+    public List<String> getImageOfDayInfoUrl(String jsonObject){
+        JSONObject obj;
+        List<String> PODInfo = new ArrayList<>();
+        try{
+            obj = new JSONObject(jsonObject);
+            JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
+            String key = pages.keys().next();
+            String title = pages.getJSONObject(key).getString("title");
+            JSONArray imageInfo = pages.getJSONObject(key).getJSONArray("imageinfo");
+            PODInfo.add(imageInfo.getJSONObject(0).getString("url")); // image url
+            PODInfo.add(baseAPIUrl+"format=json&action=query&prop=revisions&rvprop=content&rvslots=*&titles="+title); // content url
+            PODInfo.add(baseAPIUrl+"format=json&action=query&prop=extracts&exintro&explaintext&titles="+title); // intro url
+            PODInfo.add(title); // article title
+            return PODInfo;
+        } catch (JSONException e){
+            Log.e("IOD Url JSON Exception", e.toString());
+            return null;
+        }
+    }
+
+    public List<String> getExtract(String jsonObject){
+        JSONObject obj;
+        List<String> ExtractInfo = new ArrayList<>();
+        try{
+            obj = new JSONObject(jsonObject);
+            JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
+            String key = pages.keys().next();
+            ExtractInfo.add(pages.getJSONObject(key).getString("title"));
+            ExtractInfo.add(pages.getJSONObject(key).getString("extract"));
+            return ExtractInfo;
+        } catch (JSONException e){
+            Log.e("Extract JSON Exception", e.toString());
+            return null;
+        }
+    }
+
+    public String getArticleContent(String jsonObject){
         JSONObject obj;
         try{
             obj = new JSONObject(jsonObject);
             JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
-            Log.i("pages", pages.toString());
-            JSONArray imageInfo = pages.getJSONObject(pages.keys().next()).getJSONArray("imageinfo");
-            return imageInfo.getJSONObject(0).getString("url");
+            String key = pages.keys().next();
+            return pages.getJSONObject(key).getJSONArray("revisions").getJSONObject(0).getJSONObject("slots").getJSONObject("main").getString("*");
         } catch (JSONException e){
-            Log.e("IOD Url JSON Exception", e.toString());
+            Log.e("Content JSON Exception", e.toString());
             return null;
         }
     }

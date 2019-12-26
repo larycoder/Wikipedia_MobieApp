@@ -14,9 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.demowiki.R;
 import com.test.demowiki.ui.article_detail.ScrollingActivity;
-import com.test.demowiki.ui.article_detail.WebViewActivity;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 

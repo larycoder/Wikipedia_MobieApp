@@ -1,5 +1,10 @@
 package com.test.demowiki.ui.article_detail;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.test.demowiki.VolleySingleton;
 import com.test.demowiki.wikiAPI.wikipediaAPI;
 
 import androidx.appcompat.app.AlertDialog;
@@ -7,10 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 
-import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +24,8 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
@@ -35,6 +43,7 @@ public class ScrollingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
+        updateDetailArticle();
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -42,7 +51,7 @@ public class ScrollingActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
         final CollapsingToolbarLayout collapsingToolbar= findViewById(R.id.toolbar_layout);
-        AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+        AppBarLayout mAppBarLayout = findViewById(R.id.app_bar);
         mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
         boolean isShow = false;
         int scrollRange = -1;
@@ -98,13 +107,6 @@ public class ScrollingActivity extends AppCompatActivity {
                 }
             }
         });
-
-        wikipediaAPI wikiAPI = new wikipediaAPI();
-
-        WebView webView = findViewById(R.id.webview);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl(wikiAPI.getArticleUrl("Newton"));
 }
 
     @Override
@@ -144,6 +146,33 @@ public class ScrollingActivity extends AppCompatActivity {
     private void showOption(int id) {
         MenuItem item = menu.findItem(id);
         item.setVisible(true);
+    }
+
+    private void updateDetailArticle(){
+        if(getIntent().getExtras() != null) {
+            ((ImageView) findViewById(R.id.expandedImage)).setImageDrawable(null);
+            VolleySingleton.getQueue().add(new ImageRequest(getIntent().getExtras().getString("articleImageUrl"), new Response.Listener<Bitmap>() {
+                @Override
+                public void onResponse(Bitmap response) {
+                    ((ImageView) findViewById(R.id.expandedImage)).setImageBitmap(response);
+
+                    VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, getIntent().getExtras().getString("articleDescriptionUrl"), new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            TextView articleDetail = findViewById(R.id.article_detail_header);
+                            wikipediaAPI wikiAPI = new wikipediaAPI();
+                            articleDetail.setText(wikiAPI.getExtract(response).get(0));
+                        }
+                    }, null));
+
+                    //WebView webView = findViewById(R.id.webview);
+                    //webView.setWebViewClient(new WebViewClient());
+                    //webView.getSettings().setJavaScriptEnabled(true);
+                    //webView.loadUrl(getIntent().getExtras().getString("articleDescriptionUrl"));
+                    // remove bar navigation of article
+                }
+            }, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+        }
     }
 
 }

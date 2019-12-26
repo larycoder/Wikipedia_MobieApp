@@ -12,10 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.test.demowiki.MainActivity;
 import com.test.demowiki.R;
 import com.test.demowiki.ui.article_detail.ScrollingActivity;
-import com.test.demowiki.ui.article_detail.WebViewActivity;
 
 import java.util.ArrayList;
 
