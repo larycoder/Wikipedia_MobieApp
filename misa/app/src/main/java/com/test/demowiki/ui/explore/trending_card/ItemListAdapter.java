@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.demowiki.R;
 import com.test.demowiki.ui.article_detail.ScrollingActivity;
+import com.test.demowiki.ui.article_detail.WebViewActivity;
 
 import org.w3c.dom.Text;
 
@@ -47,6 +48,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemHo
             public void onClick(View v) {
                 Toast.makeText(context, item.getHeader(),Toast.LENGTH_LONG).show();
                 Intent startScroll = new Intent(context, ScrollingActivity.class);
+                //Intent startScroll = new Intent(context, WebViewActivity.class);
                 context.startActivity(startScroll);
 
             }
