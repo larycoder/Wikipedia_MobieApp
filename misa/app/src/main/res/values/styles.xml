@@ -18,11 +18,14 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:actionOverflowButtonStyle">@style/ActionButton.Overflow.Icon</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
-
+        <item name="searchViewStyle">@style/AppTheme.SearchView</item>
     </style>
-
+    <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="searchHintIcon">@null</item>
+    </style>
     <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
         <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+        <item name="android:textColorHint">@android:color/black</item>
 
     </style>
     <style name="ActionButton.Overflow.Icon" parent="@style/Widget.AppCompat.ActionButton.Overflow">
