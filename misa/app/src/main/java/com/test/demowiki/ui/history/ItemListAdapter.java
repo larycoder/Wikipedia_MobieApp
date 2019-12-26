@@ -69,4 +69,15 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemHo
             img=itemView.findViewById(R.id.item_img);
         }
     }
+    public void removeItem(int position){
+        itemList.remove(position);
+        notifyItemRemoved(position);
+    }
+    public void restoreItem(Item item,int position){
+        itemList.add(position,item);
+        notifyItemInserted(position);
+    }
+    public ArrayList<Item> getData(){
+        return itemList;
+    }
 }
