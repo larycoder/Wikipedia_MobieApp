@@ -13,6 +13,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
 
 import com.test.demowiki.ui.customize_feed.CustomizeActivity;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private Toolbar toolbar;
+    private RequestQueue queue;
 
 
     @Override
@@ -74,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home).setDrawerLayout(drawer).build();
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_hamburger_icon_24dp);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // add volley queue for application
+        queue = Volley.newRequestQueue(getApplicationContext());
     }
 
 

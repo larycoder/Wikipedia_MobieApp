@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.test.demowiki.R;
 import com.test.demowiki.ui.article_detail.ScrollingActivity;
+import com.test.demowiki.ui.article_detail.WebViewActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,6 +68,7 @@ public class ArticleFragment extends Fragment implements PopupMenu.OnMenuItemCli
             @Override
             public void onClick(View v) {
                 Intent startScroll = new Intent(getContext(), ScrollingActivity.class);
+                //Intent startScroll = new Intent(getContext(), WebViewActivity.class);
                 startActivity(startScroll);
             }
         });

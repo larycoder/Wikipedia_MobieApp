@@ -1,5 +1,7 @@
 package com.test.demowiki.ui.article_detail;
 
+import com.test.demowiki.wikiAPI.wikipediaAPI;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,15 +11,19 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.test.demowiki.R;
+
 
 public class ScrollingActivity extends AppCompatActivity {
     private Menu menu;
@@ -58,23 +64,23 @@ public class ScrollingActivity extends AppCompatActivity {
         });
 
         /*AlertDialog*/
-        builder= new AlertDialog.Builder(ScrollingActivity.this);
-        ImageButton lockbtn= findViewById(R.id.lock_btn);
-        lockbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                builder.setMessage(R.string.noneditable_alert_content).setCancelable(false)
-                        .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alert=builder.create();
-                alert.setTitle(R.string.noneditable_alert_title);
-                alert.show();
-            }
-        });
+//        builder= new AlertDialog.Builder(ScrollingActivity.this);
+//        ImageButton lockbtn= findViewById(R.id.lock_btn);
+//        lockbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                builder.setMessage(R.string.noneditable_alert_content).setCancelable(false)
+//                        .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                dialog.cancel();
+//                            }
+//                        });
+//                AlertDialog alert=builder.create();
+//                alert.setTitle(R.string.noneditable_alert_title);
+//                alert.show();
+//            }
+//        });
 
         saveBtn = findViewById(R.id.save_article_detail);
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -90,9 +96,15 @@ public class ScrollingActivity extends AppCompatActivity {
                     Toast.makeText(ScrollingActivity.this, "Removed from your list", Toast.LENGTH_SHORT).show();
                     isPress =false;
                 }
-
             }
         });
+
+        wikipediaAPI wikiAPI = new wikipediaAPI();
+
+        WebView webView = findViewById(R.id.webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl(wikiAPI.getArticleUrl("Newton"));
 }
 
     @Override

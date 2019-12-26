@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.test.demowiki.ui.explore.ArticleFragment;
 import com.test.demowiki.ui.explore.ExploreFragment;
+import com.test.demowiki.ui.history.HistoryFragment;
+import com.test.demowiki.ui.my_lists.MyListsFragment;
 
 public class HomeFragmentPagerAdapter extends FragmentStatePagerAdapter {
     private final int PAGE_COUNT = 3;
@@ -30,9 +32,9 @@ public class HomeFragmentPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new ExploreFragment();
             case 1:
-                return new TestFragment();
+                return new MyListsFragment();
             case 2:
-                return new TestFragment();
+                return new HistoryFragment();
         }
         return new Fragment();
     }
