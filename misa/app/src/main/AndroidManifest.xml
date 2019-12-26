@@ -9,9 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.article_detail.ScrollingActivity"
+        <activity android:name=".SearchActivity"
             android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.test.demowiki.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.article_detail.ScrollingActivity"
             android:label=""
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
