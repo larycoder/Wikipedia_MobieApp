@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -37,20 +38,19 @@ public class wikipediaAPI {
     }
 
     public String getImageOfDayPageTitleUrl(){
-        Date date = new Date();
-        return baseAPIUrl + "format=json&action=query&prop=images&titles=Template:POTD_protected/"+date.toString();
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        return baseAPIUrl + "format=json&action=query&prop=images&titles=Template:POTD_protected/"+df.format(date);
     }
     public String getImageOfDayPageURL(String jsonObject){
         JSONObject obj;
         try {
             obj = new JSONObject(jsonObject);
             JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
-            Iterator<String> keys = pages.keys();
-            String key = keys.next();
-            JSONArray file = pages.getJSONObject(key).getJSONArray("images");
+            JSONArray file = pages.getJSONObject(pages.keys().next()).getJSONArray("images");
             return baseAPIUrl+"format=json&action=query&prop=imageinfo&iiprop=url&titles="+file.getJSONObject(0).getString("title");
         } catch (JSONException e){
-            Log.e("JSON Exception", e.toString());
+            Log.e("IODP Url JSON Exception", e.toString());
             return null;
         }
     }
@@ -59,12 +59,11 @@ public class wikipediaAPI {
         try{
             obj = new JSONObject(jsonObject);
             JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
-            Iterator<String> keys = pages.keys();
-            String key = keys.next();
-            JSONArray imageInfo = pages.getJSONObject(key).getJSONArray("imageInfo");
+            Log.i("pages", pages.toString());
+            JSONArray imageInfo = pages.getJSONObject(pages.keys().next()).getJSONArray("imageinfo");
             return imageInfo.getJSONObject(0).getString("url");
         } catch (JSONException e){
-            Log.e("JSON Exception", e.toString());
+            Log.e("IOD Url JSON Exception", e.toString());
             return null;
         }
     }

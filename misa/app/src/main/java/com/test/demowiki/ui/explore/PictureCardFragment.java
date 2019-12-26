@@ -3,6 +3,7 @@ package com.test.demowiki.ui.explore;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,11 +17,13 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.test.demowiki.R;
+import com.test.demowiki.VolleySingleton;
 import com.test.demowiki.ui.customize_feed.CustomizeActivity;
 import com.test.demowiki.wikiAPI.*;
 
@@ -67,27 +70,32 @@ public class PictureCardFragment extends Fragment {
                 popup.show();
             }
         });
+        updateImage();
         return v;
     }
     private void hideOption(int id) {
         MenuItem item = this.popup.getMenu().findItem(id);
         item.setVisible(false);
     }
-    public void updateImage(wikipediaAPI wikiAPI, RequestQueue queue){
-        StringRequest imageOfDay
-
-    }
-    public ImageRequest VolleyRequest(String url){
-        // create a listener for response
-        Response.Listener<Bitmap> listener = new Response.Listener<Bitmap>() {
+    public void updateImage(){
+        final wikipediaAPI wikiAPI = new wikipediaAPI();
+        VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, wikiAPI.getImageOfDayPageTitleUrl(), new Response.Listener<String>() {
             @Override
-            public void onResponse(Bitmap bitmap) {
-                ImageView cardImage = getView().findViewById(R.id.picture_card_main);
-                cardImage.setImageBitmap(bitmap);
+            public void onResponse(String response) {
+                String imagePageRequest = wikiAPI.getImageOfDayPageURL(response);
+                VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, imagePageRequest, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        String imageRequest = wikiAPI.getImageOfDayUrl(response);
+                        VolleySingleton.getQueue().add(new ImageRequest(imageRequest, new Response.Listener<Bitmap>() {
+                            @Override
+                            public void onResponse(Bitmap response) {
+                                ((ImageView) getView().findViewById(R.id.picture_card_main)).setImageBitmap(response);
+                            }
+                        }, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+                    }
+                }, null));
             }
-        };
-
-        // create request
-        return new ImageRequest(url, listener, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null);
+        }, null));
     }
 }
