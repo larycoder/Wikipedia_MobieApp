@@ -12,11 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.SearchManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +27,9 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.test.demowiki.ui.article_detail.ScrollingActivity;
 import com.test.demowiki.ui.explore.trending_card.Item;
 import com.test.demowiki.ui.history.ItemListAdapter;
 import com.test.demowiki.wikiAPI.wikipediaAPI;
@@ -111,46 +116,87 @@ public class SearchActivity extends AppCompatActivity {
 				Response.Listener<String> response =  new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						List<String> tittles = api.getTitleList(response);
+						final List<String> tittles = api.getTitleList(response);
 						LinearLayout searchList = findViewById(R.id.search_item_test);
 
+						TextView title2 = searchList.findViewById(R.id.search_article_title2);
+						title2.setText(null);
+						TextView summary2 = searchList.findViewById(R.id.search_article_summary2);
+						summary2.setText(null);
+						ImageView image2 = searchList.findViewById(R.id.search_article_image2);
+						image2.setImageDrawable(null);
+
+						TextView title1 = searchList.findViewById(R.id.search_article_title1);
+						title1.setText(null);
+						TextView summary1 = searchList.findViewById(R.id.search_article_summary1);
+						summary1.setText(null);
+						ImageView image1 = searchList.findViewById(R.id.search_article_image1);
+						image1.setImageDrawable(null);
+
+						TextView title0 = searchList.findViewById(R.id.search_article_title0);
+						title0.setText(null);
+						TextView summary0 = searchList.findViewById(R.id.search_article_summary0);
+						summary0.setText(null);
+						ImageView image0 = searchList.findViewById(R.id.search_article_image0);
+						image0.setImageDrawable(null);
+
 						if(tittles.size() >= 1) {
-							TextView title0 = searchList.findViewById(R.id.search_article_title0);
 							title0.setText(tittles.get(0));
-							TextView summary0 = searchList.findViewById(R.id.search_article_summary0);
 							summary0.setText(Html.fromHtml(api.getSnippetList(response).get(0)));
-						}
-						else{
-							TextView title0 = searchList.findViewById(R.id.search_article_title0);
-							title0.setText(null);
-							TextView summary0 = searchList.findViewById(R.id.search_article_summary0);
-							summary0.setText(null);
+							VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getThumbnailPageUrl(tittles.get(0)), new Response.Listener<String>() {
+								@Override
+								public void onResponse(String response) {
+									VolleySingleton.getQueue().add(new ImageRequest(api.getThumbnailUrl(response), new Response.Listener<Bitmap>() {
+										@Override
+										public void onResponse(Bitmap response) {
+											((ImageView) findViewById(R.id.search_article_image0)).setImageBitmap(response);
+										}
+									}, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+								}
+							}, null));
+
 						}
 
 						if(tittles.size() >= 2) {
-							TextView title1 = searchList.findViewById(R.id.search_article_title1);
 							title1.setText(tittles.get(1));
-							TextView summary1 = searchList.findViewById(R.id.search_article_summary1);
 							summary1.setText(Html.fromHtml(api.getSnippetList(response).get(1)));
-						}
-						else{
-							TextView title1 = searchList.findViewById(R.id.search_article_title1);
-							title1.setText(null);
-							TextView summary1 = searchList.findViewById(R.id.search_article_summary1);
-							summary1.setText(null);
+							VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getThumbnailPageUrl(tittles.get(1)), new Response.Listener<String>() {
+								@Override
+								public void onResponse(String response) {
+									VolleySingleton.getQueue().add(new ImageRequest(api.getThumbnailUrl(response), new Response.Listener<Bitmap>() {
+										@Override
+										public void onResponse(Bitmap response) {
+											((ImageView) findViewById(R.id.search_article_image1)).setImageBitmap(response);
+										}
+									}, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+								}
+							}, null));
 						}
 
 						if(tittles.size() >= 3) {
-							TextView title2 = searchList.findViewById(R.id.search_article_title2);
 							title2.setText(tittles.get(2));
-							TextView summary2 = searchList.findViewById(R.id.search_article_summary2);
 							summary2.setText(Html.fromHtml(api.getSnippetList(response).get(2)));
-						}
-						else{
-							TextView title2 = searchList.findViewById(R.id.search_article_title2);
-							title2.setText(null);
-							TextView summary2 = searchList.findViewById(R.id.search_article_summary2);
-							summary2.setText(null);
+							VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getThumbnailPageUrl(tittles.get(2)), new Response.Listener<String>() {
+								@Override
+								public void onResponse(String response) {
+									VolleySingleton.getQueue().add(new ImageRequest(api.getThumbnailUrl(response), new Response.Listener<Bitmap>() {
+										@Override
+										public void onResponse(Bitmap response) {
+											((ImageView) findViewById(R.id.search_article_image2)).setImageBitmap(response);
+										}
+									}, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+								}
+							}, null));
+
+//							searchList.findViewById(R.id.search_item_test0).setOnClickListener(new View.OnClickListener(){
+//								@Override
+//								public void onClick(View v){
+//									Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
+//									//startScroll.putExtra("articleImageUrl", PODInfo.get(0));
+//									//startScroll.putExtra("articleDescriptionUrl", PODInfo.get(2));
+//									startActivity(startScroll);
+//								}
+//							});
 						}
 					}
 				};

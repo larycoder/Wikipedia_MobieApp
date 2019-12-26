@@ -44,6 +44,22 @@ public class wikipediaAPI {
         }
     }
 
+    public String getThumbnailPageUrl(String title){
+        return baseAPIUrl+"action=query&titles="+title+"&prop=pageimages&format=json";
+    }
+
+    public String getThumbnailUrl(String jsonObject){
+        JSONObject obj;
+        try {
+            obj = new JSONObject(jsonObject);
+            JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
+            return pages.getJSONObject(pages.keys().next()).getJSONObject("thumbnail").getString("source");
+        } catch (JSONException e){
+            Log.e("Thumbnail Exception", e.toString());
+            return null;
+        }
+    }
+
     public String getArticleUrl(String title){
         return basePageUrl+title;
     }
