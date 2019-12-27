@@ -151,30 +151,34 @@ public class ScrollingActivity extends AppCompatActivity {
     private void updateDetailArticle(){
         if(getIntent().getExtras() != null) {
             ((ImageView) findViewById(R.id.expandedImage)).setImageDrawable(null);
-            VolleySingleton.getQueue().add(new ImageRequest(getIntent().getExtras().getString("articleImageUrl"), new Response.Listener<Bitmap>() {
+            VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, getIntent().getExtras().getString("articleDescriptionUrl"), new Response.Listener<String>() {
                 @Override
-                public void onResponse(Bitmap response) {
-                    ((ImageView) findViewById(R.id.expandedImage)).setImageBitmap(response);
+                public void onResponse(String response) {
+                    wikipediaAPI wikiAPI = new wikipediaAPI();
+                    if(! getIntent().getExtras().getString("articleImageUrl").equals("Not Exit Image")) {
+                        VolleySingleton.getQueue().add(new ImageRequest(getIntent().getExtras().getString("articleImageUrl"), new Response.Listener<Bitmap>() {
+                            @Override
+                            public void onResponse(Bitmap response) {
+                                ((ImageView) findViewById(R.id.expandedImage)).setImageBitmap(response);
+                            }
+                        }, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+                    }
+                    else{
+                        (findViewById(R.id.expandedImage)).setVisibility(View.GONE);
+                    }
 
-                    VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, getIntent().getExtras().getString("articleDescriptionUrl"), new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            wikipediaAPI wikiAPI = new wikipediaAPI();
-                            TextView articleDetailHeader = findViewById(R.id.article_detail_header);
-                            articleDetailHeader.setText(wikiAPI.getExtract(response).get(0));
-                            TextView articleDetailSubHeader = findViewById(R.id.article_detail_sub_header);
-                            articleDetailSubHeader.setText(wikiAPI.getExtract(response).get(1));
-                        }
-                    }, null));
-
-                    //WebView webView = findViewById(R.id.webview);
-                    //webView.setWebViewClient(new WebViewClient());
-                    //webView.getSettings().setJavaScriptEnabled(true);
-                    //webView.loadUrl(getIntent().getExtras().getString("articleDescriptionUrl"));
-                    // remove bar navigation of article
+                    TextView articleDetailHeader = findViewById(R.id.article_detail_header);
+                    articleDetailHeader.setText(wikiAPI.getExtract(response).get(0));
+                    TextView articleDetailSubHeader = findViewById(R.id.article_detail_sub_header);
+                    articleDetailSubHeader.setText(wikiAPI.getExtract(response).get(1));
                 }
-            }, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
+            }, null));
         }
+        //WebView webView = findViewById(R.id.webview);
+        //webView.setWebViewClient(new WebViewClient());
+        //webView.getSettings().setJavaScriptEnabled(true);
+        //webView.loadUrl(getIntent().getExtras().getString("articleDescriptionUrl"));
+        // remove bar navigation of article
     }
 
 }

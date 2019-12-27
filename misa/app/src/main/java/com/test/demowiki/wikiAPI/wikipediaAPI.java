@@ -75,7 +75,12 @@ public class wikipediaAPI {
             obj = new JSONObject(jsonObject);
             JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
             String key = pages.keys().next();
-            originImageInfo.add(pages.getJSONObject(key).getJSONObject("original").getString("source"));
+            if(pages.getJSONObject(key).has("original")) {
+                originImageInfo.add(pages.getJSONObject(key).getJSONObject("original").getString("source"));
+            }
+            else{
+                originImageInfo.add("Not Exit Image");
+            }
             originImageInfo.add(baseAPIUrl+"format=json&action=query&prop=extracts&exintro&explaintext&titles="+pages.getJSONObject(key).getString("title"));
             return originImageInfo;
         } catch (JSONException e){
