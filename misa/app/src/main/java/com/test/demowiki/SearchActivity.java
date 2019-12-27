@@ -152,6 +152,7 @@ public class SearchActivity extends AppCompatActivity {
 											Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
 											startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
 											startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+											startScroll.putExtra("INTERNET", "YES");
 											startActivity(startScroll);
 										}
 									}, null));
@@ -183,6 +184,7 @@ public class SearchActivity extends AppCompatActivity {
 											Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
 											startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
 											startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+											startScroll.putExtra("INTERNET", "YES");
 											startActivity(startScroll);
 										}
 									}, null));
@@ -213,6 +215,7 @@ public class SearchActivity extends AppCompatActivity {
 											Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
 											startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
 											startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+											startScroll.putExtra("INTERNET", "YES");
 											startActivity(startScroll);
 										}
 									}, null));

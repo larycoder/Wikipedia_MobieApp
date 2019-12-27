@@ -43,7 +43,6 @@ public class HorizontalRVAdapter extends RecyclerView.Adapter<HorizontalRVAdapte
             public void onClick(View v) {
                 Toast.makeText(context, article.getDescription(),Toast.LENGTH_LONG).show();
                 Intent startScroll = new Intent(context, ScrollingActivity.class);
-                //Intent startScroll = new Intent(context, WebViewActivity.class);
                 context.startActivity(startScroll);
 
             }

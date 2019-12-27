@@ -84,6 +84,7 @@
                 android:src="@drawable/dinasour" />
 
             <TextView
+                android:id="@+id/article_featuredfeed_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
@@ -100,20 +101,20 @@
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:text="@string/article_summary"
-                android:textColor="@color/colorTextGrey"
-                android:textSize="12sp" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:text="@string/article_summary"-->
+<!--                android:textColor="@color/colorTextGrey"-->
+<!--                android:textSize="12sp" />-->
 
             <Space
                 android:layout_width="10dp"
                 android:layout_height="5dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/article_featuredfeed_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
@@ -121,7 +122,6 @@
                 android:paddingTop="10dp"
                 android:maxLines="4"
                 android:ellipsize="end"
-                android:text="@string/article_content"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="12sp" />
 

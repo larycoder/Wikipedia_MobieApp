@@ -104,6 +104,7 @@ public class PictureCardFragment extends Fragment {
                                         Intent startScroll = new Intent(getActivity().getApplicationContext(), ScrollingActivity.class);
                                         startScroll.putExtra("articleImageUrl", PODInfo.get(0));
                                         startScroll.putExtra("articleDescriptionUrl", PODInfo.get(2));
+                                        startScroll.putExtra("INTERNET", "YES");
                                         startActivity(startScroll);
                                     }
                                 });
