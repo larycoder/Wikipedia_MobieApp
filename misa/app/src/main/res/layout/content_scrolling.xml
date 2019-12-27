@@ -27,22 +27,21 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/article_detail_header"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/article_detail_sub_header"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignStart="@id/article_detail_header"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_below="@id/article_detail_header"-->
-<!--            android:text="@string/sample_art_sub_header"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textColor="@color/colorTextGrey"/>-->
+        <TextView
+            android:id="@+id/article_detail_sub_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/article_detail_header"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/article_detail_header"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextGrey"/>
         <View
             android:id="@+id/divider"
             android:layout_marginTop="18dp"
             android:layout_width="60dp"
             android:layout_height="2dp"
-            android:layout_below="@id/article_detail_header"
+            android:layout_below="@id/article_detail_sub_header"
             android:layout_alignParentStart="true"
             android:background="@color/colorTextGrey"/>
 <!--        <TextView-->

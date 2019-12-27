@@ -117,7 +117,7 @@ public class SearchActivity extends AppCompatActivity {
 					@Override
 					public void onResponse(String response) {
 						final List<String> tittles = api.getTitleList(response);
-						LinearLayout searchList = findViewById(R.id.search_item_test);
+						final LinearLayout searchList = findViewById(R.id.search_item_test);
 
 						TextView title2 = searchList.findViewById(R.id.search_article_title2);
 						title2.setText(null);
@@ -143,6 +143,20 @@ public class SearchActivity extends AppCompatActivity {
 						if(tittles.size() >= 1) {
 							title0.setText(tittles.get(0));
 							summary0.setText(Html.fromHtml(api.getSnippetList(response).get(0)));
+							searchList.findViewById(R.id.search_item_test0).setOnClickListener(new View.OnClickListener(){
+								@Override
+								public void onClick(View v){
+									VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getOriginalImageArticleUrl(tittles.get(0)), new Response.Listener<String>() {
+										@Override
+										public void onResponse(String response) {
+											Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
+											startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
+											startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+											startActivity(startScroll);
+										}
+									}, null));
+								}
+							});
 							VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getThumbnailPageUrl(tittles.get(0)), new Response.Listener<String>() {
 								@Override
 								public void onResponse(String response) {
@@ -160,6 +174,20 @@ public class SearchActivity extends AppCompatActivity {
 						if(tittles.size() >= 2) {
 							title1.setText(tittles.get(1));
 							summary1.setText(Html.fromHtml(api.getSnippetList(response).get(1)));
+							searchList.findViewById(R.id.search_item_test1).setOnClickListener(new View.OnClickListener(){
+								@Override
+								public void onClick(View v){
+									VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getOriginalImageArticleUrl(tittles.get(1)), new Response.Listener<String>() {
+										@Override
+										public void onResponse(String response) {
+											Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
+											startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
+											startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+											startActivity(startScroll);
+										}
+									}, null));
+								}
+							});
 							VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getThumbnailPageUrl(tittles.get(1)), new Response.Listener<String>() {
 								@Override
 								public void onResponse(String response) {
@@ -176,6 +204,20 @@ public class SearchActivity extends AppCompatActivity {
 						if(tittles.size() >= 3) {
 							title2.setText(tittles.get(2));
 							summary2.setText(Html.fromHtml(api.getSnippetList(response).get(2)));
+							searchList.findViewById(R.id.search_item_test2).setOnClickListener(new View.OnClickListener(){
+								@Override
+								public void onClick(View v){
+									VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getOriginalImageArticleUrl(tittles.get(2)), new Response.Listener<String>() {
+										@Override
+										public void onResponse(String response) {
+											Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
+											startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
+											startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+											startActivity(startScroll);
+										}
+									}, null));
+								}
+							});
 							VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, api.getThumbnailPageUrl(tittles.get(2)), new Response.Listener<String>() {
 								@Override
 								public void onResponse(String response) {
@@ -187,16 +229,6 @@ public class SearchActivity extends AppCompatActivity {
 									}, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, null));
 								}
 							}, null));
-
-//							searchList.findViewById(R.id.search_item_test0).setOnClickListener(new View.OnClickListener(){
-//								@Override
-//								public void onClick(View v){
-//									Intent startScroll = new Intent(getApplicationContext(), ScrollingActivity.class);
-//									//startScroll.putExtra("articleImageUrl", PODInfo.get(0));
-//									//startScroll.putExtra("articleDescriptionUrl", PODInfo.get(2));
-//									startActivity(startScroll);
-//								}
-//							});
 						}
 					}
 				};

@@ -64,6 +64,26 @@ public class wikipediaAPI {
         return basePageUrl+title;
     }
 
+    public String getOriginalImageArticleUrl(String title){
+        return baseAPIUrl+"action=query&prop=pageimages&format=json&piprop=original&titles="+title;
+    }
+
+    public List<String> getOriginalImageUrl(String jsonObject){
+        JSONObject obj;
+        List<String> originImageInfo = new ArrayList<>();
+        try {
+            obj = new JSONObject(jsonObject);
+            JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
+            String key = pages.keys().next();
+            originImageInfo.add(pages.getJSONObject(key).getJSONObject("original").getString("source"));
+            originImageInfo.add(baseAPIUrl+"format=json&action=query&prop=extracts&exintro&explaintext&titles="+pages.getJSONObject(key).getString("title"));
+            return originImageInfo;
+        } catch (JSONException e){
+            Log.e("Origin Image Exception", e.toString());
+            return null;
+        }
+    }
+
     public String getImageOfDayPageTitleUrl(){
         Date date = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");

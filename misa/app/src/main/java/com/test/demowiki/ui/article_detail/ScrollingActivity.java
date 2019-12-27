@@ -159,9 +159,11 @@ public class ScrollingActivity extends AppCompatActivity {
                     VolleySingleton.getQueue().add(new StringRequest(Request.Method.GET, getIntent().getExtras().getString("articleDescriptionUrl"), new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            TextView articleDetail = findViewById(R.id.article_detail_header);
                             wikipediaAPI wikiAPI = new wikipediaAPI();
-                            articleDetail.setText(wikiAPI.getExtract(response).get(0));
+                            TextView articleDetailHeader = findViewById(R.id.article_detail_header);
+                            articleDetailHeader.setText(wikiAPI.getExtract(response).get(0));
+                            TextView articleDetailSubHeader = findViewById(R.id.article_detail_sub_header);
+                            articleDetailSubHeader.setText(wikiAPI.getExtract(response).get(1));
                         }
                     }, null));
 
