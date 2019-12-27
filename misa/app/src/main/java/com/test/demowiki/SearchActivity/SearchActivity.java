@@ -111,7 +111,8 @@ public class SearchActivity extends AppCompatActivity {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
 				final wikipediaAPI api = new wikipediaAPI();
-				String searchUrl = api.getTitleSearchUrl(10, query);
+				listItem.clear();
+				String searchUrl = api.getTitleSearchUrl(3, query);
 				Response.Listener<String> response =  new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {

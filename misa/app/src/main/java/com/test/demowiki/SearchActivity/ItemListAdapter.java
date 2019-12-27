@@ -57,6 +57,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemHo
 						Intent startScroll = new Intent(context, ScrollingActivity.class);
 						startScroll.putExtra("articleImageUrl", api.getOriginalImageUrl(response).get(0));
 						startScroll.putExtra("articleDescriptionUrl", api.getOriginalImageUrl(response).get(1));
+						startScroll.putExtra("INTERNET", "YES");
 						context.startActivity(startScroll);
 					}
 				}, null));
