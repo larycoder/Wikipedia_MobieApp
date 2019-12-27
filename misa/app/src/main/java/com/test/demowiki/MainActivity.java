@@ -13,10 +13,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
 
+import com.test.demowiki.SearchActivity.SearchActivity;
 import com.test.demowiki.ui.customize_feed.CustomizeActivity;
 import com.test.demowiki.ui.login.LoginActivity;
 import com.test.demowiki.ui.setting.SettingActivity;
@@ -28,7 +28,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.widget.SearchView;
 
 
 public class MainActivity extends AppCompatActivity {
