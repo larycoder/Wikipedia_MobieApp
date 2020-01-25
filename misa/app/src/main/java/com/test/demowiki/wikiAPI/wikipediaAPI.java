@@ -58,8 +58,10 @@ public class wikipediaAPI {
         JSONObject obj;
         try {
             obj = new JSONObject(jsonObject);
+            Log.i("Obj", obj.toString());
             JSONObject pages = obj.getJSONObject("query").getJSONObject("pages");
-            return pages.getJSONObject(pages.keys().next()).getJSONObject("thumbnail").getString("source");
+            String key = pages.keys().next();
+            return pages.getJSONObject(key).getJSONObject("thumbnail").getString("source");
         } catch (JSONException e){
             Log.e("Thumbnail Exception", e.toString());
             return null;
